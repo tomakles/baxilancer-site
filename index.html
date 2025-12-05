@@ -6,7 +6,7 @@
   <title>3LANCER – Automatic time & expense tracking for freelancers</title>
   <meta name="description" content="3LANCER automatically tracks your working time based on location, scans receipts and creates clear reports. Ideal for freelancers and solo contractors." />
 
-  <!-- favicon – funguje ak do repa nahráš favicon.png -->
+  <!-- favicon – works if you upload favicon.png to the repo root -->
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
@@ -14,7 +14,7 @@
       --primary-green: #3D642D;  /* RAL 6010 */
       --primary-green-dark: #304F23;
       --accent-yellow: #F6B600; /* RAL 1021 */
-      --bg-grey: #F2F3F3;       /* RAL 7035 (svetlejšia varianta) */
+      --bg-grey: #F2F3F3;       /* RAL 7035 */
       --border-grey: #D7D7D7;
       --text-main: #111827;
       --text-muted: #4B5563;
@@ -156,19 +156,26 @@
       gap: 20px;
     }
 
+    /* card container */
     .card {
       background: #ffffff;
       border-radius: 16px;
-      padding: 20px 20px 22px;
+      /* top padding is visually handled by the orange header strip */
+      padding: 0 20px 22px;
       box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
       border: 1px solid var(--border-grey);
     }
 
+    /* orange strip for card titles */
     .card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 18px;
-      color: var(--primary-green-dark);
+      margin: 0 -20px 14px;              /* stretch over full card width */
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 700;
+      background: var(--accent-yellow);  /* app accent color */
+      color: var(--text-main);
+      border-radius: 16px 16px 0 0;      /* rounded top corners */
+      border-bottom: 1px solid var(--border-grey);
     }
 
     .card p {
@@ -228,7 +235,7 @@
   <div class="header-inner">
     <div class="header-top">
       <div class="brand">
-        <!-- logo.png musí byť v root repozitára -->
+        <!-- logo.png must be in the repository root -->
         <img src="logo.png" alt="3LANCER logo" class="logo-icon">
         <div class="logo-text"><span>3</span>LANCER</div>
       </div>
@@ -357,7 +364,7 @@
       pricingModel: "Model: 3 dni bezplatné vyskúšanie, potom mesačné predplatné.",
       pricingLanguages: "Jazyky aplikácie: slovenčina, angličtina, nemčina, španielčina, poľština.",
       pricingNote: "Presné cenové plány a funkcie zverejníme pri spustení aplikácie v App Store.",
-      footerText: "© 2025 3LANCER • 3lancer.ovh • Kontakt: (doplníš e-mail na support)"
+      footerText: "© 2025 3LANCER • 3lancer.ovh • Kontakt: threelancer.customer@gmail.com"
     },
     de: {
       pill: "Für Freiberufler und Selbständige",
@@ -374,7 +381,7 @@
       sec2Title: "Für wen ist 3LANCER?",
       aud1Title: "🔧 Handwerker und Außendienst",
       aud1Text: "Bau, Elektriker, Installateure, Monteure, Servicetechniker – überall dort, wo du beim Kunden vor Ort arbeitest.",
-      aud2Title: "💻 Freiberufler на Stundenbasis",
+      aud2Title: "💻 Freiberufler auf Stundenbasis",
       aud2Text: "Entwickler, Berater, Designer, Fotografen, Marketing-Freelancer – überall dort, wo die Stunden pro Projekt zählen.",
       aud3Title: "👥 Kleine Teams (bald verfügbar)",
       aud3Text: "Zukünftige Versionen ermöglichen die Zeiterfassung für mehrere Personen auf gemeinsamen Projekten.",
@@ -383,7 +390,7 @@
       pricingModel: "Modell: 3 Tage kostenlos testen, danach monatliches Abonnement.",
       pricingLanguages: "App-Sprachen: Deutsch, Englisch, Spanisch, Polnisch, Slowakisch.",
       pricingNote: "Genaue Preisstufen und Funktionen werden zum Start im App Store bekanntgegeben.",
-      footerText: "© 2025 3LANCER • 3lancer.ovh • Kontakt: (Support-E-Mail ergänzen)"
+      footerText: "© 2025 3LANCER • 3lancer.ovh • Kontakt: threelancer.customer@gmail.com"
     },
     es: {
       pill: "Para autónomos y freelancers",
@@ -408,8 +415,8 @@
       pricingPlatform: "Plataforma: iOS (iPhone)",
       pricingModel: "Modelo: 3 días de prueba gratuita y luego suscripción mensual.",
       pricingLanguages: "Idiomas de la app: español, inglés, alemán, polaco, eslovaco.",
-      pricingNote: "Los planes и funciones exactas se anunciarán en el lanzamiento en App Store.",
-      footerText: "© 2025 3LANCER • 3lancer.ovh • Contacto: (añade tu correo de soporte)"
+      pricingNote: "Los planes y funciones exactas se anunciarán en el lanzamiento en App Store.",
+      footerText: "© 2025 3LANCER • 3lancer.ovh • Contacto: threelancer.customer@gmail.com"
     },
     pl: {
       pill: "Dla freelancerów i jednoosobowych firm",
@@ -435,7 +442,7 @@
       pricingModel: "Model: 3 dni darmowego testu, a potem miesięczna subskrypcja.",
       pricingLanguages: "Języki aplikacji: polski, angielski, niemiecki, hiszpański, słowacki.",
       pricingNote: "Dokładne plany cenowe i funkcje ogłosimy przy premierze w App Store.",
-      footerText: "© 2025 3LANCER • 3lancer.ovh • Kontakt: (dodaj e-mail wsparcia)"
+      footerText: "© 2025 3LANCER • 3lancer.ovh • Kontakt: threelancer.customer@gmail.com"
     }
   };
 
