@@ -66,7 +66,7 @@
 
     .logo-text {
       font-weight: 800;
-      font-size: 22px;
+      font-size: 28px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--primary-green);
@@ -79,8 +79,10 @@
     .lang-switcher {
       margin-left: auto;
       display: flex;
-      gap: 8px;
+      gap: 6px;
       align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .lang-btn {
@@ -96,6 +98,7 @@
       align-items: center;
       gap: 4px;
       font-weight: 500;
+      white-space: nowrap;
     }
 
     .lang-btn:hover {
@@ -233,13 +236,25 @@
 
     @media (max-width: 640px) {
       .header-top {
-        flex-direction: row;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
       }
       .brand {
         gap: 8px;
       }
       .logo-text {
-        font-size: 18px;
+        font-size: 36px;
+      }
+      .lang-switcher {
+        margin-left: 0;
+        justify-content: flex-end;
+        width: 100%;
+      }
+      .lang-btn {
+        padding: 5px 8px;
+        font-size: 11px;
+        gap: 3px;
       }
     }
 
