@@ -258,6 +258,81 @@ const firebaseConfig = {
       color: var(--text-main);
     }
 
+    /* waitlist form */
+    .waitlist-form {
+      max-width: 520px;
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .waitlist-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .waitlist-input {
+      flex: 1;
+      height: 48px;
+      padding: 0 26px;
+      border-radius: 999px;
+      border: 1px solid var(--border-grey);
+      font-size: 16px;    /* match .btn-primary text size */
+      line-height: 48px;
+      outline: none;
+      background-color: #ffffff;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.06s ease;
+    }
+
+    .waitlist-input::placeholder {
+      color: #9ca3af;
+    }
+
+    .waitlist-input:focus {
+      border-color: var(--primary-green);
+      box-shadow: 0 0 0 3px rgba(61, 100, 45, 0.18);
+      transform: translateY(-1px);
+    }
+
+    .waitlist-btn {
+      height: 48px;
+      padding: 0 26px;    /* align with input padding */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      margin-top: 0;       /* override .btn-primary default */
+    }
+
+    .waitlist-note {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    @media (max-width: 640px) {
+      .waitlist-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .waitlist-input {
+        width: 100%;
+        height: 52px;
+        font-size: 16px;
+        line-height: 52px;
+      }
+
+      .waitlist-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
     .muted {
       color: #6b7280;
       font-size: 14px;
