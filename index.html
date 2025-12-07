@@ -3,8 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3LANCER – Automatic time & expense tracking for freelancers</title>
-  <meta name="description" content="3LANCER automatically tracks your working time based on location, scans receipts and creates clear reports. Ideal for freelancers and solo contractors." />
+  <title>3LANCER – Automatic time tracking app for freelancers (GPS + receipts)</title>
+  <meta name="description" content="3LANCER is an automatic time tracking app for freelancers. GPS-based time tracking, AI receipt scanning and clear reports for solo contractors." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="3LANCER – Automatic time tracking app for freelancers" />
+  <meta property="og:description" content="GPS-based time tracking, AI receipt scanning and project reports for freelancers and solo contractors." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://3lancer.ovh/" />
+  <meta property="og:image" content="https://3lancer.ovh/logo.png" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "3LANCER",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "iOS",
+    "description": "Automatic time tracking app for freelancers with GPS-based tracking, AI receipt scanning and project reports.",
+    "url": "https://3lancer.ovh/",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
 
   <!-- favicon – works if you upload favicon.png to the repo root -->
   <link rel="icon" type="image/png" href="favicon.png" />
@@ -25,15 +50,15 @@
     import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
     import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-// Firebase configuration - Replace with your project details
-const firebaseConfig = {
-  apiKey: "AIzaSyCVFwLlFKZWhaS4O-9EpDU5yr4YRKruwOQ",
-  authDomain: "lancer-watchlist.firebaseapp.com",
-  projectId: "lancer-watchlist",
-  storageBucket: "lancer-watchlist.appspot.com",
-  messagingSenderId: "754434438624",
-  appId: "1:754434438624:web:e93f207d2ef5e2838b6785"
-};
+    // Firebase configuration - Replace with your project details
+    const firebaseConfig = {
+      apiKey: "AIzaSyCVFwLlFKZWhaS4O-9EpDU5yr4YRKruwOQ",
+      authDomain: "lancer-watchlist.firebaseapp.com",
+      projectId: "lancer-watchlist",
+      storageBucket: "lancer-watchlist.appspot.com",
+      messagingSenderId: "754434438624",
+      appId: "1:754434438624:web:e93f207d2ef5e2838b6785"
+    };
 
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
@@ -527,6 +552,28 @@ const firebaseConfig = {
       <p id="pricing-note" class="muted"></p>
     </div>
   </section>
+
+  <!-- SEO text section -->
+  <section class="section" id="seo-copy">
+    <h2>Freelancer time tracking app with GPS and receipt scanning</h2>
+    <p>
+      3LANCER is a time tracking app built specifically for freelancers and solo contractors.
+      Instead of starting and stopping manual timers, the app uses your location (GPS) to
+      automatically track working hours on each project. This makes it useful for trades,
+      field work and any kind of hourly freelance work.
+    </p>
+    <p>
+      Besides time tracking, 3LANCER also works as an expense and receipt tracking app.
+      You can scan receipts with AI, assign them to projects and generate clear reports
+      for invoicing and taxes. The goal is to combine freelancer time tracking, receipt
+      scanning and reporting in one simple tool.
+    </p>
+    <p>
+      If you are looking for an automatic time tracking app for freelancers, a GPS-based
+      work hours tracker or an AI-powered receipt scanner, 3LANCER aims to cover all of
+      these use cases in one place.
+    </p>
+  </section>
 </main>
 
 <footer>
@@ -537,8 +584,8 @@ const firebaseConfig = {
   const translations = {
     en: {
       pill: "For freelancers & solo contractors",
-      heroTitle: "Automatic time tracking based on your location",
-      heroSubtitle: "You arrive at a project site, 3LANCER starts counting time. You leave, it stops. Meanwhile it scans receipts and assigns expenses to your projects.",
+      heroTitle: "Automatic time tracking app for freelancers",
+      heroSubtitle: "3LANCER is an automatic time tracking app for freelancers. It uses your location (GPS) to log working hours and adds AI receipt scanning and project-based expense reports.",
       heroCta: "Launching soon on the App Store",
       sec1Title: "What 3LANCER does for you",
       feat1Title: "📍 Automatic time tracking",
