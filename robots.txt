@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /.history/
+Disallow: /FIREBASE_SETUP.md
+Disallow: /README.md
+
+Sitemap: https://3lancer.ovh/sitemap.xml
