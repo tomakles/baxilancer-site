@@ -1,4 +1,14 @@
 (() => {
+  const ensureMetaPixel = () => {
+    const src = '/assets/meta-pixel.js';
+    if (document.querySelector(`script[src="${src}"]`)) return;
+    const script = document.createElement('script');
+    script.src = src;
+    document.head.appendChild(script);
+  };
+
+  ensureMetaPixel();
+
   const supported = {
     en: { path: '/' },
     de: { path: '/de/' },

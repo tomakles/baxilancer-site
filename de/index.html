@@ -845,9 +845,10 @@
       return;
     }
 
+    const context = getSignupContext('de');
+
     try {
       if (window.firebaseDB) {
-        const context = getSignupContext('de');
         await window.firebaseAddDoc(window.firebaseCollection(window.firebaseDB, 'watchlist'), {
           email: email,
           timestamp: window.firebaseServerTimestamp(),
@@ -870,11 +871,23 @@
     watchlistEmail.value = '';
 
     if (window.gtag) {
-      const context = getSignupContext('de');
       window.gtag('event', 'watchlist_signup', {
         event_category: 'engagement',
         event_label: 'de',
         src: context.src || undefined
+      });
+    }
+
+    if (window.fbq) {
+      window.fbq('track', 'Lead', {
+        content_name: 'watchlist_signup',
+        language: 'de',
+        src: context.src || undefined,
+        utm_source: context.utm?.source || undefined,
+        utm_medium: context.utm?.medium || undefined,
+        utm_campaign: context.utm?.campaign || undefined,
+        utm_term: context.utm?.term || undefined,
+        utm_content: context.utm?.content || undefined
       });
     }
   });
