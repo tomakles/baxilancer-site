@@ -1,0 +1,57 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /watchlist/{docId} {
+      // IMPORTANT: emails must NOT be publicly readable
+      allow read: if false;
+
+      // Use the (normalized) email as document id to prevent duplicates.
+      allow create: if docId == request.resource.data.email
+        && isValidSignup(request.resource.data);
+      allow update, delete: if false;
+
+      function isValidSignup(data) {
+        return data.keys().hasOnly(['email', 'timestamp', 'source', 'context'])
+          && data.keys().hasAll(['email', 'timestamp', 'source', 'context'])
+          && data.email is string
+          && data.email.size() <= 320
+          && data.email.matches('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$')
+          // Enforce server-side timestamp (FieldValue.serverTimestamp())
+          && data.timestamp == request.time
+          && data.source is string
+          && data.source.size() <= 20
+          && data.context is map
+          && data.context.keys().hasOnly(['lang', 'page', 'src', 'utm', 'referrer', 'userLang'])
+          && data.context.keys().hasAll(['lang', 'page', 'src', 'utm', 'referrer', 'userLang'])
+          && data.context.lang is string
+          && data.context.lang in ['en', 'sk', 'de', 'es', 'pl']
+          && data.source == 'web-' + data.context.lang
+          && data.context.page is string
+          && data.context.page.size() <= 200
+          && data.context.page.matches('^/.*$')
+          && (data.context.src == null || (data.context.src is string && data.context.src.size() <= 120))
+          && (data.context.referrer == null || (data.context.referrer is string && data.context.referrer.size() <= 255))
+          && (data.context.userLang == null || (data.context.userLang is string && data.context.userLang.size() <= 35))
+          && validUtm(data.context.utm);
+      }
+
+      function validUtm(utm) {
+        return utm == null || (
+          utm is map
+          && utm.keys().hasOnly(['source', 'medium', 'campaign', 'term', 'content'])
+          && utm.keys().hasAll(['source', 'medium', 'campaign', 'term', 'content'])
+          && (utm.source == null || (utm.source is string && utm.source.size() <= 120))
+          && (utm.medium == null || (utm.medium is string && utm.medium.size() <= 120))
+          && (utm.campaign == null || (utm.campaign is string && utm.campaign.size() <= 120))
+          && (utm.term == null || (utm.term is string && utm.term.size() <= 120))
+          && (utm.content == null || (utm.content is string && utm.content.size() <= 120))
+        );
+      }
+    }
+
+    // Default deny for everything else in the database
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

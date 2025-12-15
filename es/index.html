@@ -138,8 +138,8 @@
   <!-- Firebase SDK -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-    import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+    import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app-check.js";
+    import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyCVFwLlFKZWhaS4O-9EpDU5yr4YRKruwOQ",
@@ -151,11 +151,24 @@
     };
 
     const app = initializeApp(firebaseConfig);
+
+    const APP_CHECK_SITE_KEY = "";
+    if (APP_CHECK_SITE_KEY) {
+      try {
+        initializeAppCheck(app, {
+          provider: new ReCaptchaV3Provider(APP_CHECK_SITE_KEY),
+          isTokenAutoRefreshEnabled: true
+        });
+      } catch (err) {
+        console.warn("Firebase App Check init failed:", err);
+      }
+    }
+
     const db = getFirestore(app);
 
     window.firebaseDB = db;
-    window.firebaseCollection = collection;
-    window.firebaseAddDoc = addDoc;
+    window.firebaseDoc = doc;
+    window.firebaseSetDoc = setDoc;
     window.firebaseServerTimestamp = serverTimestamp;
   </script>
 
@@ -826,13 +839,13 @@
   }
 
   function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
     return emailRegex.test(email);
   }
 
-  watchlistForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const email = watchlistEmail.value.trim();
+	  watchlistForm.addEventListener('submit', async (e) => {
+	    e.preventDefault();
+	    const email = watchlistEmail.value.trim().toLowerCase();
 
     successMsg.style.display = 'none';
     errorMsg.style.display = 'none';
@@ -843,26 +856,36 @@
       return;
     }
 
-    const context = getSignupContext('es');
+	    const context = getSignupContext('es');
 
-    try {
-      if (window.firebaseDB) {
-        await window.firebaseAddDoc(window.firebaseCollection(window.firebaseDB, 'watchlist'), {
-          email: email,
-          timestamp: window.firebaseServerTimestamp(),
-          source: 'web-es',
-          context
-        });
-      }
-    } catch (firebaseError) {
-      console.log('Firebase error, storing locally as fallback:', firebaseError.message);
-    }
+	    try {
+	      if (window.firebaseDB) {
+	        await window.firebaseSetDoc(window.firebaseDoc(window.firebaseDB, 'watchlist', email), {
+	          email: email,
+	          timestamp: window.firebaseServerTimestamp(),
+	          source: 'web-es',
+	          context
+	        });
+	      }
+	    } catch (firebaseError) {
+	      console.log('Firebase error, storing locally as fallback:', firebaseError.message);
+	    }
 
-    const storedEmails = JSON.parse(localStorage.getItem('watchlist') || '[]');
-    if (!storedEmails.includes(email)) {
-      storedEmails.push(email);
-      localStorage.setItem('watchlist', JSON.stringify(storedEmails));
-    }
+	    let storedEmails = [];
+	    try {
+	      storedEmails = JSON.parse(safeLocalStorageGet('watchlist') || '[]');
+	      if (!Array.isArray(storedEmails)) storedEmails = [];
+	    } catch {
+	      storedEmails = [];
+	    }
+	    storedEmails = storedEmails
+	      .filter((item) => typeof item === 'string')
+	      .map((item) => item.trim().toLowerCase())
+	      .filter(Boolean);
+	    if (!storedEmails.includes(email)) {
+	      storedEmails.push(email);
+	      safeLocalStorageSet('watchlist', JSON.stringify(storedEmails));
+	    }
 
     successMsg.textContent = '✓ ¡Gracias! Te avisaremos cuando lancemos.';
     successMsg.style.display = 'block';
