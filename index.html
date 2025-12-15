@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
   <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
   <script src="/assets/lang.js" defer></script>
   <link rel="stylesheet" href="/assets/footer.css" />
@@ -123,16 +122,6 @@
       }
     ]
   }
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7LM47GKKD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Y7LM47GKKD');
-    window.gtag = gtag;
   </script>
 
   <!-- Firebase SDK -->
@@ -870,9 +859,9 @@
     return emailRegex.test(email);
   }
 
-	  watchlistForm.addEventListener('submit', async (e) => {
-	    e.preventDefault();
-	    const email = watchlistEmail.value.trim().toLowerCase();
+  watchlistForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = watchlistEmail.value.trim().toLowerCase();
 
     successMsg.style.display = 'none';
     errorMsg.style.display = 'none';
@@ -883,36 +872,45 @@
       return;
     }
 
-	    const context = getSignupContext('en');
+    let storedEmails = [];
+    try {
+      storedEmails = JSON.parse(safeLocalStorageGet('watchlist') || '[]');
+      if (!Array.isArray(storedEmails)) storedEmails = [];
+    } catch {
+      storedEmails = [];
+    }
 
-	    try {
-	      if (window.firebaseDB) {
-	        await window.firebaseSetDoc(window.firebaseDoc(window.firebaseDB, 'watchlist', email), {
-	          email: email,
-	          timestamp: window.firebaseServerTimestamp(),
-	          source: 'web-en',
-	          context
-	        });
-	      }
-	    } catch (firebaseError) {
-	      console.log('Firebase error, storing locally as fallback:', firebaseError.message);
-	    }
+    storedEmails = storedEmails
+      .filter((item) => typeof item === 'string')
+      .map((item) => item.trim().toLowerCase())
+      .filter(Boolean);
 
-	    let storedEmails = [];
-	    try {
-	      storedEmails = JSON.parse(safeLocalStorageGet('watchlist') || '[]');
-	      if (!Array.isArray(storedEmails)) storedEmails = [];
-	    } catch {
-	      storedEmails = [];
-	    }
-	    storedEmails = storedEmails
-	      .filter((item) => typeof item === 'string')
-	      .map((item) => item.trim().toLowerCase())
-	      .filter(Boolean);
-	    if (!storedEmails.includes(email)) {
-	      storedEmails.push(email);
-	      safeLocalStorageSet('watchlist', JSON.stringify(storedEmails));
-	    }
+    if (storedEmails.includes(email)) {
+      successMsg.textContent = '✓ You\'re already on the watchlist.';
+      successMsg.style.display = 'block';
+      watchlistEmail.value = '';
+      return;
+    }
+
+    const context = getSignupContext('en');
+
+    try {
+      if (window.firebaseDB) {
+        await window.firebaseSetDoc(window.firebaseDoc(window.firebaseDB, 'watchlist', email), {
+          email: email,
+          timestamp: window.firebaseServerTimestamp(),
+          source: 'web-en',
+          context
+        });
+      }
+    } catch (firebaseError) {
+      console.log('Firebase error, storing locally as fallback:', firebaseError.message);
+    }
+
+    if (!storedEmails.includes(email)) {
+      storedEmails.push(email);
+      safeLocalStorageSet('watchlist', JSON.stringify(storedEmails));
+    }
 
     successMsg.textContent = '✓ Thank you! We\'ll notify you when 3LANCER launches.';
     successMsg.style.display = 'block';
@@ -923,19 +921,6 @@
         event_category: 'engagement',
         event_label: 'en',
         src: context.src || undefined
-      });
-    }
-
-    if (window.fbq) {
-      window.fbq('track', 'Lead', {
-        content_name: 'watchlist_signup',
-        language: 'en',
-        src: context.src || undefined,
-        utm_source: context.utm?.source || undefined,
-        utm_medium: context.utm?.medium || undefined,
-        utm_campaign: context.utm?.campaign || undefined,
-        utm_term: context.utm?.term || undefined,
-        utm_content: context.utm?.content || undefined
       });
     }
   });
