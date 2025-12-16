@@ -11,11 +11,11 @@
   };
 
   const suggestedCopy = {
-    en: (label) => `We detected ${label}. Switch?`,
-    de: (label) => `Wir haben ${label} erkannt. Wechseln?`,
-    es: (label) => `Detectamos ${label}. ¿Cambiar?`,
-    pl: (label) => `Wykryto ${label}. Przełączyć?`,
-    sk: (label) => `Vidím, že preferujete ${label}. Prepnúť?`
+    en: (label) => `We detected ${label}. Switch language?`,
+    de: (label) => `Wir haben ${label} erkannt. Sprache wechseln?`,
+    es: (label) => `Hemos detectado ${label}. ¿Cambiar de idioma?`,
+    pl: (label) => `Wykryliśmy ${label}. Przełączyć język?`,
+    sk: (label) => `Zistili sme, že preferujete ${label}. Prepnúť jazyk?`
   };
 
   const switchLabel = {

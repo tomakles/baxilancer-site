@@ -48,17 +48,17 @@
       reports: 'Raporty',
       guides: 'Poradniki',
       privacy: 'Prywatność',
-      cookies: 'Cookies',
+      cookies: 'Pliki cookie',
       contact: 'Kontakt'
     },
     sk: {
       home: 'Domov',
       gps: 'GPS',
       receipts: 'Bločky',
-      reports: 'Reporty',
+      reports: 'Prehľady',
       guides: 'Návody',
       privacy: 'Súkromie',
-      cookies: 'Cookies',
+      cookies: 'Súbory cookie',
       contact: 'Kontakt'
     }
   };
@@ -80,7 +80,7 @@
     },
     es: {
       title: 'Cookies',
-      text: 'Usamos cookies opcionales para analítica anónima (Google Analytics) para mejorar el sitio.',
+      text: 'Usamos cookies opcionales de analítica anónima (Google Analytics) para mejorar el sitio web.',
       accept: 'Aceptar',
       decline: 'Rechazar',
       learnMore: 'Privacidad'
@@ -94,7 +94,7 @@
     },
     sk: {
       title: 'Cookies',
-      text: 'Používame voliteľné cookies na anonymnú analytiku (Google Analytics) pre zlepšenie webu.',
+      text: 'Používame voliteľné súbory cookie na anonymnú analytiku (Google Analytics), aby sme zlepšovali web.',
       accept: 'Súhlasím',
       decline: 'Odmietnuť',
       learnMore: 'Súkromie'
@@ -308,15 +308,104 @@
     return path === href || path.startsWith(href);
   };
 
+  const stripLangPrefix = (path) => {
+    for (const lang of ['sk', 'de', 'es', 'pl']) {
+      const prefix = `/${lang}`;
+      if (path === prefix || path === `${prefix}/`) return '/';
+      if (path.startsWith(`${prefix}/`)) return path.slice(prefix.length) || '/';
+    }
+    return path || '/';
+  };
+
+  const buildPathForLang = (targetLang, basePath) => {
+    if (!supported[targetLang]) return basePath;
+    if (targetLang === 'en') return basePath;
+    if (basePath === '/' || basePath === '/index.html') return supported[targetLang].path;
+    return `/${targetLang}${basePath}`;
+  };
+
+  const getHreflangPaths = () => {
+    const paths = {};
+    const links = document.querySelectorAll('link[rel="alternate"][hreflang][href]');
+    for (const link of links) {
+      const raw = (link.getAttribute('hreflang') || '').toLowerCase();
+      if (!raw || raw === 'x-default') continue;
+      const langKey = baseLang(raw);
+      if (!supported[langKey]) continue;
+      if (paths[langKey]) continue;
+      try {
+        const url = new URL(link.getAttribute('href'), window.location.href);
+        paths[langKey] = url.pathname;
+      } catch {
+        // ignore invalid URLs
+      }
+    }
+    return paths;
+  };
+
+  const ensureLangSwitcher = () => {
+    if (document.querySelector('.lang-switcher')) return;
+    const header = document.querySelector('header');
+    if (!header) return;
+
+    const headerInner = header.querySelector('.header-inner') || header;
+
+    const currentLang = getCurrentLang();
+    const suffix = `${window.location.search || ''}${window.location.hash || ''}`;
+
+    const hreflangPaths = getHreflangPaths();
+    const basePath = stripLangPrefix(window.location.pathname);
+
+    const labels = {
+      en: '🇬🇧 EN',
+      de: '🇩🇪 DE',
+      es: '🇪🇸 ES',
+      pl: '🇵🇱 PL',
+      sk: '🇸🇰 SK'
+    };
+
+    const makeHref = (langKey) => {
+      const path = hreflangPaths[langKey] || buildPathForLang(langKey, basePath);
+      return `${path}${suffix}`;
+    };
+
+    const switcher = document.createElement('div');
+    switcher.className = 'lang-switcher site-lang-switcher';
+    switcher.setAttribute('aria-label', 'Language');
+    switcher.innerHTML = Object.keys(labels)
+      .map((langKey) => {
+        const active = langKey === currentLang;
+        const activeClass = active ? 'active' : '';
+        const ariaCurrentAttr = active ? ' aria-current="page"' : '';
+        return `<a href="${makeHref(langKey)}" class="lang-link ${activeClass}"${ariaCurrentAttr}>${labels[langKey]}</a>`;
+      })
+      .join('');
+
+    const brand = headerInner.querySelector('.brand');
+    let headerTop = headerInner.querySelector('.header-top') || headerInner.querySelector('.top');
+    if (!headerTop) {
+      headerTop = document.createElement('div');
+      headerTop.className = 'header-top site-header-top';
+      headerInner.insertAdjacentElement('afterbegin', headerTop);
+    }
+
+    if (brand && brand.parentElement !== headerTop) headerTop.appendChild(brand);
+    headerTop.appendChild(switcher);
+  };
+
   const ensureTopNav = () => {
     if (document.getElementById('site-topnav')) return;
 
-    const navLinks = items
+    const topNavItems = items.filter((item) => item.key !== 'cookies');
+
+    const navLinks = topNavItems
       .map((item) => {
         const label = t[item.key] || labels.en[item.key] || item.key;
-        const activeClass = isActive(item.href) ? 'active' : '';
+        const active = isActive(item.href);
+        const activeClass = active ? 'active' : '';
         const actionAttr = item.action ? ` data-action="${item.action}"` : '';
-        return `<a href="${item.href}" class="${activeClass}"${actionAttr}>${label}</a>`;
+        const ariaCurrentAttr = active ? ' aria-current="page"' : '';
+        return `<a href="${item.href}" class="${activeClass}"${actionAttr}${ariaCurrentAttr}>${label}</a>`;
       })
       .join('');
 
@@ -330,18 +419,8 @@
     `.trim();
 
     const header = document.querySelector('header');
-    const headerInner = header?.querySelector('.header-inner') || null;
-    const headerTop = headerInner?.querySelector('.header-top') || header?.querySelector('.header-top') || null;
-    const brand = headerInner?.querySelector('.brand') || header?.querySelector('.brand') || null;
-
-    if (headerTop?.parentElement) {
-      headerTop.insertAdjacentElement('afterend', wrapper);
-    } else if (brand?.parentElement) {
-      brand.insertAdjacentElement('afterend', wrapper);
-    } else if (headerInner) {
-      headerInner.insertAdjacentElement('afterbegin', wrapper);
-    } else if (header) {
-      header.insertAdjacentElement('afterbegin', wrapper);
+    if (header?.parentElement) {
+      header.insertAdjacentElement('afterend', wrapper);
     } else {
       document.body.insertAdjacentElement('afterbegin', wrapper);
     }
@@ -353,6 +432,7 @@
     });
   };
 
+  ensureLangSwitcher();
   ensureTopNav();
 
   let footer = document.querySelector('footer');
@@ -366,10 +446,12 @@
   const navLinks = items
     .map((item, idx) => {
       const label = t[item.key] || labels.en[item.key] || item.key;
-      const activeClass = isActive(item.href) ? 'active' : '';
+      const active = isActive(item.href);
+      const activeClass = active ? 'active' : '';
+      const ariaCurrentAttr = active ? ' aria-current="page"' : '';
       const sep = idx === 0 ? '' : '<span class="footer-sep" aria-hidden="true">•</span>';
       const actionAttr = item.action ? ` data-action="${item.action}"` : '';
-      return `${sep}<a href="${item.href}" class="${activeClass}"${actionAttr}>${label}</a>`;
+      return `${sep}<a href="${item.href}" class="${activeClass}"${actionAttr}${ariaCurrentAttr}>${label}</a>`;
     })
     .join('');
 
