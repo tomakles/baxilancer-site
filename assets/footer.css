@@ -75,14 +75,27 @@ header .top .nav {
   .header-top {
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 12px !important;
+    gap: 16px !important;
   }
   
   .site-header-top .site-lang-switcher,
   .header-top .lang-switcher {
     margin-left: 0 !important;
     width: 100% !important;
-    justify-content: flex-start !important;
+    justify-content: flex-end !important;
+  }
+
+  .logo-icon {
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  .logo-text {
+    font-size: 26px !important;
+  }
+  
+  .brand {
+    gap: 12px !important;
   }
 }
 
