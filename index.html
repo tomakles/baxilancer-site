@@ -575,7 +575,7 @@
       <p style="font-size: 15px; color: var(--text-muted); margin-top: 12px;">
         Built by a freelancer who was tired of forgetting hours.
       </p>
-      <a href="#watchlist-form" class="btn-primary">Get early access</a>
+      <a href="https://apps.apple.com/us/app/baxilancer/id6757809629" class="btn-primary">Download on the App Store</a>
     </div>
   </div>
 </header>
@@ -640,37 +640,17 @@
     </div>
   </section>
 
-  <!-- Email Watchlist Section -->
+  <!-- App Store Section -->
   <section class="section">
-    <h2>Get notified when we launch</h2>
+    <h2>Available now on the App Store</h2>
     <p class="waitlist-desc">
-      Leave your email address below and we'll notify you as soon as BAXILANCER is
-      available in the App Store.
+      Download BAXILANCER today and start tracking your time automatically.
     </p>
-    <form id="watchlist-form" class="waitlist-form">
-      <div class="waitlist-row">
-        <input
-          type="email"
-          id="watchlist-email"
-          class="waitlist-input"
-          required
-          autocomplete="email"
-          placeholder="Your email address"
-        />
-        <button type="submit" class="btn-primary waitlist-btn" id="watchlist-btn">
-          Get early access
-        </button>
-      </div>
-      <p class="waitlist-note">
-        Early users get priority access and launch pricing.
-      </p>
-      <div class="success-message" id="watchlist-success">
-        ✓ Thank you! We'll notify you when BAXILANCER launches.
-      </div>
-      <div class="error-message" id="watchlist-error">
-        ✗ Please enter a valid email address.
-      </div>
-    </form>
+    <div style="text-align: center; margin-top: 24px;">
+      <a href="https://apps.apple.com/us/app/baxilancer/id6757809629" class="btn-primary" style="display: inline-block;">
+        Download on the App Store
+      </a>
+    </div>
   </section>
 
   <section class="section">
@@ -743,162 +723,6 @@
 </footer>
 
 <script>
-  const watchlistForm = document.getElementById('watchlist-form');
-  const watchlistEmail = document.getElementById('watchlist-email');
-  const successMsg = document.getElementById('watchlist-success');
-  const errorMsg = document.getElementById('watchlist-error');
-
-  const ATTR_KEY = 'baxilancer_attr';
-  const ATTR_TTL_MS = 1000 * 60 * 60 * 24 * 30; // 30 days
-
-  function safeLocalStorageGet(key) {
-    try {
-      return localStorage.getItem(key);
-    } catch {
-      return null;
-    }
-  }
-
-  function safeLocalStorageSet(key, value) {
-    try {
-      localStorage.setItem(key, value);
-    } catch {
-      // Ignore storage errors (e.g., Safari private mode)
-    }
-  }
-
-  function getReferrerHost() {
-    try {
-      return document.referrer ? new URL(document.referrer).hostname : null;
-    } catch {
-      return null;
-    }
-  }
-
-  function getAttributionFromUrl() {
-    const url = new URL(window.location.href);
-    const params = url.searchParams;
-
-    const src = params.get('src');
-    const utm = {
-      source: params.get('utm_source'),
-      medium: params.get('utm_medium'),
-      campaign: params.get('utm_campaign'),
-      term: params.get('utm_term'),
-      content: params.get('utm_content')
-    };
-
-    const hasUtm = Object.values(utm).some((v) => typeof v === 'string' && v.length > 0);
-    const hasSrc = typeof src === 'string' && src.length > 0;
-    if (!hasSrc && !hasUtm) return null;
-
-    return {
-      src: hasSrc ? src : null,
-      utm,
-      savedAt: Date.now()
-    };
-  }
-
-  function getStoredAttribution() {
-    const raw = safeLocalStorageGet(ATTR_KEY);
-    if (!raw) return null;
-    try {
-      const parsed = JSON.parse(raw);
-      if (!parsed || typeof parsed !== 'object') return null;
-      if (!parsed.savedAt || typeof parsed.savedAt !== 'number') return null;
-      if (Date.now() - parsed.savedAt > ATTR_TTL_MS) return null;
-      return parsed;
-    } catch {
-      return null;
-    }
-  }
-
-  function getSignupContext(lang) {
-    const urlAttr = getAttributionFromUrl();
-    if (urlAttr) safeLocalStorageSet(ATTR_KEY, JSON.stringify(urlAttr));
-    const attr = urlAttr || getStoredAttribution();
-
-    return {
-      lang,
-      page: window.location.pathname,
-      src: attr?.src || null,
-      utm: attr?.utm || null,
-      referrer: getReferrerHost(),
-      userLang: navigator.language || null
-    };
-  }
-
-  function isValidEmail(email) {
-    const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-    return emailRegex.test(email);
-  }
-
-  watchlistForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const email = watchlistEmail.value.trim().toLowerCase();
-
-    successMsg.style.display = 'none';
-    errorMsg.style.display = 'none';
-
-    if (!isValidEmail(email)) {
-      errorMsg.textContent = '✗ Please enter a valid email address.';
-      errorMsg.style.display = 'block';
-      return;
-    }
-
-    let storedEmails = [];
-    try {
-      storedEmails = JSON.parse(safeLocalStorageGet('watchlist') || '[]');
-      if (!Array.isArray(storedEmails)) storedEmails = [];
-    } catch {
-      storedEmails = [];
-    }
-
-    storedEmails = storedEmails
-      .filter((item) => typeof item === 'string')
-      .map((item) => item.trim().toLowerCase())
-      .filter(Boolean);
-
-    if (storedEmails.includes(email)) {
-      successMsg.textContent = '✓ You\'re already on the watchlist.';
-      successMsg.style.display = 'block';
-      watchlistEmail.value = '';
-      return;
-    }
-
-    const context = getSignupContext('en');
-
-    try {
-      if (window.firebaseDB) {
-        await window.firebaseSetDoc(window.firebaseDoc(window.firebaseDB, 'watchlist', email), {
-          email: email,
-          timestamp: window.firebaseServerTimestamp(),
-          source: 'web-en',
-          context
-        });
-      }
-    } catch (firebaseError) {
-      console.log('Firebase error, storing locally as fallback:', firebaseError.message);
-    }
-
-    if (!storedEmails.includes(email)) {
-      storedEmails.push(email);
-      safeLocalStorageSet('watchlist', JSON.stringify(storedEmails));
-    }
-
-    successMsg.textContent = '✓ Thank you! We\'ll notify you when BAXILANCER launches.';
-    successMsg.style.display = 'block';
-    watchlistEmail.value = '';
-
-    if (window.gtag) {
-      window.gtag('event', 'watchlist_signup', {
-        event_category: 'engagement',
-        event_label: 'en',
-        src: context.src || undefined
-      });
-    }
-  });
-
   // Basic scroll depth analytics
   let maxScrollSent = 0;
   const scrollMarks = [25, 50, 75, 90];
