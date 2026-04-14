@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="/assets/lang.js" defer></script>
+  <link rel="stylesheet" href="/assets/footer.css" />
+  <script src="/assets/footer.js?v=blg" defer></script>
+
+  <title>Jak freelancerzy, wykonawcy i pracownicy fizyczni automatycznie rejestrują godziny pracy (Przewodnik 2026) | BAXILANCER Blog</title>
+  <meta name="description" content="Kompletny przewodnik po automatycznym rejestrowaniu czasu pracy dla freelancerów, wykonawców i pracowników fizycznych. Dowiedz się, jak aplikacje GPS zastępują karty czasu pracy, rejestrują czas na budowach i generują dokładne raporty — bez ręcznego wprowadzania danych." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+
+  <link rel="canonical" href="https://www.baxilancer.ovh/pl/blog/how-freelancers-contractors-track-work-hours-automatically/" />
+
+  <!-- hreflang -->
+  <link rel="alternate" href="https://www.baxilancer.ovh/blog/how-freelancers-contractors-track-work-hours-automatically/" hreflang="en" />
+  <link rel="alternate" href="https://www.baxilancer.ovh/de/blog/how-freelancers-contractors-track-work-hours-automatically/" hreflang="de" />
+  <link rel="alternate" href="https://www.baxilancer.ovh/es/blog/how-freelancers-contractors-track-work-hours-automatically/" hreflang="es" />
+  <link rel="alternate" href="https://www.baxilancer.ovh/pl/blog/how-freelancers-contractors-track-work-hours-automatically/" hreflang="pl" />
+  <link rel="alternate" href="https://www.baxilancer.ovh/sk/blog/how-freelancers-contractors-track-work-hours-automatically/" hreflang="sk" />
+  <link rel="alternate" href="https://www.baxilancer.ovh/blog/how-freelancers-contractors-track-work-hours-automatically/" hreflang="x-default" />
+
+  <!-- Favicon & app icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="256x256" href="/favicon-256x256.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="msapplication-TileImage" content="/favicon-192x192.png" />
+  <meta name="msapplication-TileColor" content="#3D642D" />
+  <meta name="theme-color" content="#3D642D" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jak freelancerzy, wykonawcy i pracownicy fizyczni automatycznie rejestrują godziny pracy (Przewodnik 2026)" />
+  <meta property="og:description" content="Kompletny przewodnik po automatycznym rejestrowaniu czasu. Aplikacje GPS, mobilne przepływy pracy i dokładne raporty." />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="BAXILANCER" />
+  <meta property="og:url" content="https://www.baxilancer.ovh/pl/blog/how-freelancers-contractors-track-work-hours-automatically/" />
+  <meta property="og:image" content="https://www.baxilancer.ovh/logo.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jak freelancerzy, wykonawcy i pracownicy fizyczni automatycznie rejestrują godziny pracy (Przewodnik 2026)" />
+  <meta name="twitter:description" content="Kompletny przewodnik po automatycznym rejestrowaniu czasu. Aplikacje GPS, mobilne przepływy pracy i dokładne raporty." />
+  <meta name="twitter:image" content="https://www.baxilancer.ovh/logo.png" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Jak freelancerzy, wykonawcy i pracownicy fizyczni automatycznie rejestrują godziny pracy (Przewodnik 2026)",
+    "image": "https://www.baxilancer.ovh/logo.png",
+    "author": { "@type": "Organization", "name": "BAXILANCER" },
+    "publisher": { "@type": "Organization", "name": "BAXILANCER", "logo": { "@type": "ImageObject", "url": "https://www.baxilancer.ovh/logo.png" } },
+    "datePublished": "2026-04-14",
+    "dateModified": "2026-04-14",
+    "inLanguage": "pl",
+    "description": "Kompletny przewodnik po automatycznym rejestrowaniu czasu pracy dla freelancerów, wykonawców i pracowników fizycznych.",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.baxilancer.ovh/pl/blog/how-freelancers-contractors-track-work-hours-automatically/" }
+  }
+  </script>
+
+  <!-- FAQ structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Jaka jest najlepsza darmowa aplikacja do rejestrowania czasu pracy dla freelancerów?", "acceptedAnswer": { "@type": "Answer", "text": "Najlepsze darmowe aplikacje oferują automatyczne rejestrowanie, ewidencję projektową i eksport raportów. Aplikacje GPS takie jak Baxilancer oferują bezpłatny okres próbny z rejestrowaniem na podstawie lokalizacji, skanowaniem paragonów i podsumowaniami finansowymi — funkcjami, których aplikacje z ręcznym timerem zazwyczaj nie mają." } },
+      { "@type": "Question", "name": "Jak działa rejestrowanie czasu pracy przez GPS?", "acceptedAnswer": { "@type": "Answer", "text": "Rejestrowanie czasu przez GPS wykorzystuje usługi lokalizacyjne telefonu do wykrywania, kiedy przyjeżdżasz i wyjeżdżasz z miejsca pracy. Gdy wejdziesz w zarejestrowaną lokalizację projektu, aplikacja rozpoczyna odliczanie bezpieczeństwa (zazwyczaj 10 minut) w celu potwierdzenia, że faktycznie tam pracujesz. Po potwierdzeniu rejestrowanie rozpoczyna się automatycznie." } },
+      { "@type": "Question", "name": "Czy automatyczne rejestrowanie czasu jest dokładne?", "acceptedAnswer": { "@type": "Answer", "text": "Tak. Automatyczne rejestrowanie oparte na GPS jest dokładne do kilku metrów od lokalizacji budowy. Eliminuje błędy ludzkie takie jak zapominanie o uruchomieniu lub zatrzymaniu timera, zaokrąglanie godzin czy zgadywanie na koniec tygodnia. Większość systemów zawiera również opcję ręcznej korekty." } },
+      { "@type": "Question", "name": "Czy mogę rejestrować czas dla wielu projektów w ciągu jednego dnia?", "acceptedAnswer": { "@type": "Answer", "text": "Tak. Aplikacje GPS wykrywają, na której budowie się znajdujesz i automatycznie przypisują godziny do właściwego projektu. Jeśli odwiedzisz trzy różne budowy w ciągu dnia, każda wizyta jest rejestrowana i przypisana do odpowiedniego projektu bez ręcznego wprowadzania danych." } },
+      { "@type": "Question", "name": "Czy rejestrowanie GPS wyczerpuje baterię mojego telefonu?", "acceptedAnswer": { "@type": "Answer", "text": "Nowoczesny geofencing GPS jest energooszczędny i zużywa znacznie mniej baterii niż aplikacje nawigacyjne. Większość użytkowników zgłasza znikomy wpływ na baterię podczas całego dnia pracy." } },
+      { "@type": "Question", "name": "Jak wykonawcy udowadniają klientom swoje godziny pracy?", "acceptedAnswer": { "@type": "Answer", "text": "Wykonawcy korzystający z aplikacji GPS mogą eksportować szczegółowe raporty pokazujące dokładne czasy przyjazdu i wyjazdu, dane lokalizacyjne i łączne godziny na projekt. Raporty te można eksportować jako pliki PDF, CSV lub Excel." } },
+      { "@type": "Question", "name": "Jaka jest różnica między ręcznym a automatycznym rejestrowaniem czasu?", "acceptedAnswer": { "@type": "Answer", "text": "Rejestrowanie ręczne wymaga pamiętania o uruchomieniu i zatrzymaniu timera. Automatyczne rejestrowanie wykorzystuje GPS lub wykrywanie aktywności do uruchamiania i zatrzymywania bez Twojej interwencji. Dla pracowników terenowych automatyczne rejestrowanie jest dokładniejsze o 10 do 20 procent." } },
+      { "@type": "Question", "name": "Czy mogę rejestrować paragony i wydatki razem z godzinami pracy?", "acceptedAnswer": { "@type": "Answer", "text": "Tak. Niektóre aplikacje do rejestrowania czasu zawierają skanery paragonów wykorzystujące AI OCR do wyodrębniania kwot, nazw dostawców i dat ze zdjęć paragonów. Każdy paragon możesz przypisać do konkretnego projektu." } },
+      { "@type": "Question", "name": "Czy moje dane lokalizacyjne są prywatne i bezpieczne?", "acceptedAnswer": { "@type": "Answer", "text": "Poważne aplikacje GPS rejestrują lokalizację tylko wtedy, gdy jesteś w zarejestrowanym miejscu pracy. Dane są szyfrowane podczas przesyłania i przechowywania i nigdy nie są udostępniane osobom trzecim. Ty kontrolujesz, które lokalizacje są monitorowane." } },
+      { "@type": "Question", "name": "Jak przejść z papierowych kart czasu pracy na aplikację?", "acceptedAnswer": { "@type": "Answer", "text": "Zacznij od skonfigurowania swoich stałych miejsc pracy w aplikacji. Używaj aplikacji równolegle z papierowymi kartami przez tydzień, aby porównać dokładność. W drugim tygodniu używaj aplikacji jako głównego źródła. Od trzeciego tygodnia możesz całkowicie zrezygnować z papieru." } }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary-green: #3D642D;
+      --primary-green-dark: #304F23;
+      --accent-yellow: #F6B600;
+      --bg-grey: #F2F3F3;
+      --border-grey: #D7D7D7;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--text-main); background: var(--bg-grey); }
+    header { background: #ffffff; padding: 24px 20px 48px; border-bottom: 1px solid var(--border-grey); }
+    .header-inner { max-width: 960px; margin: 0 auto; position: relative; text-align: center; }
+    .header-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+    .brand { display: inline-flex; align-items: center; gap: 24px; text-decoration: none; color: inherit; }
+    .logo-icon { width: 72px; height: 72px; border-radius: 12px; background: var(--bg-grey); object-fit: contain; }
+    .logo-text { font-weight: 800; font-size: 36px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--primary-green); }
+    .logo-text span { color: var(--accent-yellow); }
+    .pill { display: inline-block; padding: 4px 12px; border-radius: 999px; background: #ffffff; border: 1px solid var(--primary-green); color: var(--primary-green); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+    h1 { font-size: 32px; margin: 10px 0 20px; color: var(--primary-green); line-height: 1.3; }
+    .subtitle { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.6; }
+    .btn-primary { display: inline-block; margin-top: 24px; padding: 12px 26px; border-radius: 999px; background: var(--primary-green); color: #ffffff; text-decoration: none; font-weight: 600; font-size: 16px; border: none; box-shadow: 0 8px 16px rgba(61,100,45,0.25); cursor: pointer; }
+    .btn-primary:hover { background: var(--primary-green-dark); }
+    main { max-width: 800px; margin: 0 auto; padding: 40px 16px 60px; }
+    h2 { font-size: 24px; margin-top: 48px; margin-bottom: 16px; color: var(--primary-green); }
+    h3 { color: var(--primary-green-dark); font-size: 18px; margin-top: 24px; margin-bottom: 12px; }
+    p { font-size: 17px; line-height: 1.7; color: var(--text-main); margin-bottom: 20px; }
+    .section { margin-bottom: 40px; }
+    .card { background: #ffffff; border-radius: 16px; padding: 32px; box-shadow: 0 10px 25px rgba(15,23,42,0.05); border: 1px solid var(--border-grey); margin-bottom: 32px; }
+    .feature-list { list-style: none; padding: 0; margin: 0; }
+    .feature-list li { position: relative; padding-left: 28px; margin-bottom: 12px; color: var(--text-main); line-height: 1.5; font-size: 17px; }
+    .feature-list li::before { content: "•"; position: absolute; left: 8px; color: var(--primary-green); font-weight: bold; }
+    .text-link { color: var(--primary-green); font-weight: 600; text-decoration: none; }
+    .text-link:hover { text-decoration: underline; }
+    .toc { background: #ffffff; border-radius: 16px; padding: 24px 32px; border: 1px solid var(--border-grey); margin-bottom: 40px; }
+    .toc h3 { margin-top: 0; font-size: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .toc ol { margin: 0; padding-left: 20px; }
+    .toc li { margin-bottom: 8px; font-size: 15px; line-height: 1.5; }
+    .toc a { color: var(--primary-green); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    .screenshot-placeholder { background: #e8ede6; border: 2px dashed var(--primary-green); border-radius: 12px; padding: 40px 24px; text-align: center; margin: 24px 0; color: var(--primary-green-dark); font-weight: 600; font-size: 15px; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; }
+    .comparison-table th, .comparison-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border-grey); }
+    .comparison-table th { background: var(--primary-green); color: #ffffff; font-weight: 600; }
+    .comparison-table tr:nth-child(even) { background: #f9fafb; }
+    .comparison-table td:first-child { font-weight: 600; }
+    .key-takeaway { background: #f0f5ed; border-left: 4px solid var(--primary-green); padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; }
+    .key-takeaway p { margin: 0; font-size: 16px; color: var(--primary-green-dark); }
+    blockquote { border-left: 4px solid var(--accent-yellow); margin: 24px 0; padding: 16px 20px; background: #fffdf5; border-radius: 0 8px 8px 0; }
+    blockquote p { margin: 0; font-style: italic; color: var(--text-muted); }
+    .step-flow { counter-reset: step; }
+    .step-flow .step { position: relative; padding-left: 48px; margin-bottom: 24px; }
+    .step-flow .step::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 0; width: 32px; height: 32px; background: var(--primary-green); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+    @media (max-width: 600px) { h1 { font-size: 24px; } h2 { font-size: 20px; } .comparison-table { font-size: 13px; } .comparison-table th, .comparison-table td { padding: 8px 10px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <a class="brand" href="/pl/">
+        <img src="/favicon-192x192.png" alt="BAXILANCER logo" class="logo-icon" width="72" height="72">
+        <div class="logo-text"><span>BAXI</span>LANCER</div>
+      </a>
+    </div>
+    <div class="hero-copy" style="text-align:center; margin-top:8px;">
+      <div class="pill">KOMPLETNY PRZEWODNIK</div>
+      <h1>Jak freelancerzy, wykonawcy i pracownicy fizyczni automatycznie rejestrują godziny pracy</h1>
+      <p class="subtitle">Kompletny przewodnik 2026 po automatycznym rejestrowaniu czasu. Od aplikacji GPS po mobilne przepływy pracy — wszystko, czego potrzebujesz, by przestać tracić godziny do zafakturowania.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <nav class="toc">
+    <h3>W tym przewodniku</h3>
+    <ol>
+      <li><a href="#czym-jest-rejestrowanie">Czym jest rejestrowanie czasu pracy?</a></li>
+      <li><a href="#dlaczego-wazne">Dlaczego rejestrowanie czasu jest ważne?</a></li>
+      <li><a href="#jak-freelancerzy">Jak freelancerzy rejestrują godziny pracy?</a></li>
+      <li><a href="#jak-pracownicy">Jak pracownicy rejestrują czas pracy?</a></li>
+      <li><a href="#pracownicy-fizyczni">Jak pracownicy fizyczni rejestrują czas na budowach?</a></li>
+      <li><a href="#aplikacje">Czym są aplikacje do rejestrowania czasu i jak działają?</a></li>
+      <li><a href="#najlepsze-oprogramowanie">Jakie jest najlepsze oprogramowanie do rejestrowania czasu?</a></li>
+      <li><a href="#rejestrowanie-gps">Jak działa rejestrowanie czasu pracy przez GPS?</a></li>
+      <li><a href="#rejestrowanie-mobilne">Jak rejestrować godziny pracy na urządzeniach mobilnych?</a></li>
+      <li><a href="#reczne-vs-automatyczne">Rejestrowanie ręczne vs. automatyczne: porównanie</a></li>
+      <li><a href="#prawdziwy-przeplyw">Prawdziwy przepływ pracy: dzień z automatycznym rejestrowaniem</a></li>
+      <li><a href="#problemy-tradycyjnych">Problemy z tradycyjnymi aplikacjami</a></li>
+      <li><a href="#przyszlosc-gps">Dlaczego rejestrowanie GPS jest przyszłością</a></li>
+      <li><a href="#jak-bax-rozwiazuje">Jak Baxilancer rozwiązuje problem</a></li>
+      <li><a href="#przeglad-funkcji">Przegląd funkcji</a></li>
+      <li><a href="#tabela-porownawcza">Tabela porównawcza: Ręczne vs. GPS vs. Hybrydowe</a></li>
+      <li><a href="#faq">Najczęściej zadawane pytania</a></li>
+      <li><a href="#podsumowanie">Podsumowanie</a></li>
+    </ol>
+  </nav>
+
+  <!-- WPROWADZENIE -->
+  <p>
+    Właśnie skończyłeś 9-godzinny dzień na budowie. Zainstalowałeś 40 metrów kanału kablowego, podłączyłeś podrozdzielnicę i dwa razy jechałeś do sklepu po części. Jest 18:00, siedzisz w swoim busie, a ktoś pyta: „Ile godzin dziś przepracowałeś?"
+  </p>
+  <p>
+    Zgadujesz. Zawsze zgadujesz. „Pewnie jakieś osiem godzin." Ale czy to było osiem? A może raczej dziewięć i pół, licząc dojazdy do sklepu i 45 minut czekania na inspektora?
+  </p>
+  <p>
+    To rzeczywistość milionów freelancerów, wykonawców i pracowników fizycznych na całym świecie. Wykonują pracę, ale mają problem z jej dokładnym zarejestrowaniem. Papierowe karty czasu pracy uzupełniane z pamięci. Aplikacje z timerem, o których się zapomina. A na koniec każdego tygodnia pieniądze po cichu znikają — niezafakturowane godziny, niezarejestrowane wydatki, nierozliczony czas.
+  </p>
+  <p>
+    Ten przewodnik wyjaśnia, jak naprawdę działa rejestrowanie czasu pracy w 2026 roku, dlaczego tradycyjne metody zawodzą i jak nowoczesne systemy oparte na GPS zmieniają sposób rozliczania się pracowników niezależnych. Niezależnie od tego, czy jesteś <a href="/pl/guides/time-tracking-for-electricians/" class="text-link">elektrykiem</a>, <a href="/pl/guides/time-tracking-for-plumbers/" class="text-link">hydraulikiem</a>, <a href="/pl/guides/time-tracking-for-hvac-technicians/" class="text-link">technikiem HVAC</a> czy freelancerem odwiedzającym lokalizacje klientów — ten przewodnik jest dla Ciebie.
+  </p>
+
+  <h2 id="czym-jest-rejestrowanie">Czym jest rejestrowanie czasu pracy?</h2>
+  <p><strong>Rejestrowanie czasu pracy to proces zapisywania, ile godzin poświęcasz na zadanie, projekt lub zlecenie.</strong> Jest podstawą dokładnego fakturowania, naliczania wynagrodzeń i analizy produktywności dla każdego, kto wymienia czas na pieniądze.</p>
+  <p>W najprostszej formie rejestrowanie czasu oznacza zapisanie, kiedy zacząłeś pracować i kiedy skończyłeś. Pracownik budowlany może zapisać „przyjechałem 7:30, wyjechałem 16:00" w zeszycie. Freelancer-grafik może nacisnąć przycisk start w aplikacji, gdy otwiera Photoshopa.</p>
+  <p>Ale rejestrowanie czasu to nie tylko kwestia tego, ile coś trwało. Służy trzem celom:</p>
+  <div class="card">
+    <ul class="feature-list">
+      <li><strong>Dokładność fakturowania:</strong> Klienci i pracodawcy oczekują precyzyjnych rejestrów. „Jakieś 8 godzin" nie wystarczy, gdy ktoś kwestionuje fakturę.</li>
+      <li><strong>Planowanie finansowe:</strong> Gdy wiesz dokładnie, ile godzin zajmuje każdy projekt, możesz dokładniej wyceniać przyszłe zlecenia i obliczyć swoją rzeczywistą stawkę godzinową.</li>
+      <li><strong>Ochrona prawna:</strong> W sporach o płatności, rejestry czasu pracy są dowodem. Rejestry zweryfikowane przez GPS są jeszcze silniejsze, ponieważ zawierają potwierdzenie lokalizacji.</li>
+    </ul>
+  </div>
+  <div class="key-takeaway"><p><strong>Kluczowy wniosek:</strong> Rejestrowanie czasu pracy nie jest opcjonalne dla nikogo, kto fakturuje za godziny. Pytanie nie brzmi, czy to robić, ale jak to robić bez dodawania tarcia do dnia pracy.</p></div>
+
+  <h2 id="dlaczego-wazne">Dlaczego rejestrowanie czasu pracy jest ważne?</h2>
+  <p><strong>Rejestrowanie czasu jest ważne, ponieważ niedokładne rejestry prowadzą do utraty przychodów, sporów o faktury i złych decyzji finansowych.</strong> Dla freelancerów i wykonawców to różnica między rentownym biznesem a nieświadomą pracą poniżej stawki minimalnej.</p>
+  <p>Badania w branży budowlanej pokazują, że pracownicy polegający na rejestrach z pamięci zaniżają swój czas o 10 do 15 procent. Dla wykonawcy fakturującego za 50 euro na godzinę i pracującego 40 godzin tygodniowo oznacza to od 200 do 300 euro straconych co tydzień. W skali roku to ponad 10 000 euro — zarobionych, ale nigdy niezafakturowanych pieniędzy.</p>
+  <h3>Ukryte koszty złego rejestrowania czasu</h3>
+  <div class="card">
+    <ul class="feature-list">
+      <li><strong>Zaniżone przyszłe wyceny:</strong> Jeśli nie wiesz, że „zlecenie na dwa dni" zajęło naprawdę trzy, będziesz dalej wyceniać podobne projekty na dwa dni — i dalej tracić pieniądze.</li>
+      <li><strong>Stracone ulgi podatkowe:</strong> Bez rejestrowania zakupów materiałów i wyjazdów do sklepów tracisz odliczenia, do których masz prawo.</li>
+      <li><strong>Spory z klientami:</strong> Gdy klient mówi „myślałem, że to będzie tylko 20 godzin" i nie masz szczegółowych rejestrów, negocjujesz z pozycji słabości.</li>
+      <li><strong>Wypalenie i frustracja:</strong> Pracowanie wielu godzin bez widzenia ich odzwierciedlenia w dochodach jest demoralizujące.</li>
+    </ul>
+  </div>
+  <h3>Przykład z życia</h3>
+  <p>Weźmy Marka, niezależnego <a href="/pl/guides/time-tracking-for-electricians/" class="text-link">elektryka</a> w Warszawie. Kiedyś wypełniał karty czasu pracy w piątki po południu. Próbował sobie przypomnieć zlecenia z poniedziałku, dojazdy z wtorku, awarię ze środy. Po przejściu na aplikację GPS jego tygodniowe fakturowane godziny wzrosły o 12 procent — bez zmiany w rzeczywistym obciążeniu pracą.</p>
+  <div class="key-takeaway"><p><strong>Kluczowy wniosek:</strong> Prawie na pewno rejestrowujesz mniej czasu, niż rzeczywiście przepracowujesz. Dokładne rejestrowanie czasu to najłatwiejszy sposób na zwiększenie dochodów bez dodatkowych godzin pracy.</p></div>
+
+  <h2 id="jak-freelancerzy">Jak freelancerzy rejestrują godziny pracy?</h2>
+  <p><strong>Freelancerzy zazwyczaj rejestrują godziny jedną z czterech metod: ręcznymi kartami czasu pracy, aplikacjami z timerem, narzędziami do zarządzania projektami lub automatycznymi aplikacjami GPS.</strong> Najlepsza metoda zależy od tego, czy freelancer pracuje przy biurku, czy odwiedza lokalizacje.</p>
+  <h3>Metoda 1: Ręczne karty czasu pracy</h3>
+  <p>Najstarsze i najprostsze podejście. Zapisujesz godzinę rozpoczęcia i zakończenia w arkuszu kalkulacyjnym lub zeszycie. Działa dla freelancerów z przewidywalnymi harmonogramami, ale zawodzi, gdy dzień obejmuje wielu klientów, dojazdy i przerwy.</p>
+  <h3>Metoda 2: Aplikacje z timerem</h3>
+  <p>Aplikacje takie jak Toggl i Clockify pozwalają nacisnąć przycisk start, gdy zaczynasz pracę, i stop, gdy kończysz. Lepsze niż rejestrowanie z pamięci, ale zakłada, że zapamiętasz te przyciski — czego większość nie robi, zwłaszcza na budowach, gdzie ręce są zajęte narzędziami.</p>
+  <h3>Metoda 3: Integracje z zarządzaniem projektami</h3>
+  <p>Jeśli korzystasz z narzędzi takich jak Asana, Monday.com lub Jira, niektóre oferują wbudowane rejestrowanie czasu. Działa dobrze dla cyfrowych freelancerów, ale jest niepraktyczne dla pracowników terenowych.</p>
+  <h3>Metoda 4: Automatyczne rejestrowanie GPS</h3>
+  <p>To najnowsze podejście — zaprojektowane specjalnie dla freelancerów pracujących w lokalizacjach fizycznych. Nowoczesne systemy GPS, takie jak Baxilancer, wykrywają, kiedy przyjeżdżasz na budowę i automatycznie rozpoczynają rejestrowanie. Bez przycisków, bez timerów do zapamiętania.</p>
+  <div class="key-takeaway"><p><strong>Kluczowy wniosek:</strong> Freelancerzy biurkowi mogą używać aplikacji z timerem. Mobilni freelancerzy odwiedzający budowy potrzebują automatyzacji GPS, aby rejestrować godziny bez tracenia skupienia na właściwej pracy.</p></div>
+
+  <h2 id="jak-pracownicy">Jak pracownicy rejestrują czas pracy?</h2>
+  <p><strong>Pracownicy zazwyczaj rejestrują czas za pomocą systemów zarządzanych przez pracodawcę: zegarów do odbijania karty, skanerów, cyfrowych kart czasu pracy lub oprogramowania do planowania.</strong> Kluczowa różnica wobec freelancerów polega na tym, że pracownicy mają zwykle jedno miejsce pracy i są nadzorowani przez kogoś innego.</p>
+  <p>W tradycyjnych miejscach pracy pracownicy odbijają kartę na wejściu i wyjściu przy fizycznych zegarach lub czytnikach kart. Dla pracowników zdalnych cyfrowe karty czasu pracy stały się powszechne.</p>
+  <h3>Gdzie rejestrowanie czasu pracowników zawodzi</h3>
+  <div class="card">
+    <ul class="feature-list">
+      <li><strong>Pracownicy terenowi</strong> odwiedzający wiele lokalizacji dziennie</li>
+      <li><strong>Pracownicy budowlani</strong> przemieszczający się między budowami bez biura centralnego</li>
+      <li><strong>Podwykonawcy</strong> technicznie niebędący pracownikami, ale potrzebujący udowodnić swoje godziny</li>
+    </ul>
+  </div>
+  <div class="key-takeaway"><p><strong>Kluczowy wniosek:</strong> Rejestrowanie czasu pracowników jest zarządzane przez pracodawcę i przywiązane do lokalizacji. Dla pracowników terenowych i podwykonawców tradycyjne systemy zawodzą — potrzebują rozwiązań mobilnych i świadomych lokalizacji.</p></div>
+
+  <h2 id="pracownicy-fizyczni">Jak pracownicy fizyczni rejestrują czas na budowach?</h2>
+  <p><strong>Większość pracowników fizycznych nadal używa papierowych kart lub list obecności brygadzisty do rejestrowania czasu na budowach.</strong> Te metody są zawodne, wolne i tracą pieniądze dla wszystkich zaangażowanych.</p>
+  <p>Wejdź na dowolną budowę, zlecenie hydrauliczne czy projekt dachowy w 2026 roku, a nadal zobaczysz schowki na dokumenty przyciepione do ścian. Pracownicy przychodzą, bazgrzą swoje nazwisko i piszą godzinę rozpoczęcia.</p>
+  <div class="card">
+    <ul class="feature-list">
+      <li><strong>Pracownicy zapominają się odnotować:</strong> Zwłaszcza gdy przyjeżdżają w pośpiechu.</li>
+      <li><strong>Godziny się zaokrąglają:</strong> Prawie wszyscy piszą „8:00", gdy naprawdę przyjechali o 7:47.</li>
+      <li><strong>Czasy przerw są szacowane:</strong> Czy lunch trwał 30 minut, czy 50?</li>
+      <li><strong>Wyjazdy do sklepu znikają:</strong> 45 minut w hurtowni rzadko trafia na kartę czasu pracy.</li>
+      <li><strong>Wprowadzanie danych jest opóźnione:</strong> Zanim ktoś wprowadzi dane w piątek, połowa tygodnia to mgliste wspomnienia.</li>
+    </ul>
+  </div>
+  <h3>Przykład z życia</h3>
+  <p>Tomek jest <a href="/pl/guides/time-tracking-for-plumbers/" class="text-link">hydraulikiem</a> w Krakowie obsługującym trzy do pięciu wizyt serwisowych dziennie. Po przejściu na aplikację GPS odkrył, że jego dzienny zarejestrowany czas był konsekwentnie o 45 do 60 minut wyższy niż to, co zwykł raportować ręcznie. Przy 40 euro za godzinę różnica była znacząca — około 900 euro miesięcznie odzyskanych przychodów.</p>
+  <div class="key-takeaway"><p><strong>Kluczowy wniosek:</strong> Pracownicy fizyczni tracą najwięcej godzin do zafakturowania, ponieważ ich środowiska pracy są chaotyczne i fizycznie wymagające. Papierowe karty nigdy nie były zaprojektowane do pracy w wielu lokalizacjach.</p></div>
+
+  <h2 id="aplikacje">Czym są aplikacje do rejestrowania czasu i jak działają?</h2>
+  <p><strong>Aplikacje do rejestrowania czasu to narzędzia programowe rejestrujące, ile czasu poświęcasz na zadania lub projekty.</strong> Obejmują zakres od prostych cyfrowych stoperów do w pełni zautomatyzowanych systemów wykorzystujących GPS, AI i integrację z kalendarzem.</p>
+  <h3>Trzy generacje aplikacji</h3>
+  <div class="card">
+    <h3 style="margin-top:0;">Generacja 1: Ręczne timery</h3>
+    <p>Naciskasz start, naciskasz stop, przypisujesz czas do projektu. Przykłady: Toggl, Clockify.</p>
+    <h3>Generacja 2: Inteligentne timery z integracjami</h3>
+    <p>Te aplikacje łączą się z kalendarzem lub narzędziami do zarządzania i sugerują, nad czym pracowałeś. Przykłady: Harvest, RescueTime. Działa tylko dla pracy komputerowej.</p>
+    <h3>Generacja 3: Automatyczne rejestrowanie GPS</h3>
+    <p>Najnowsza generacja śledzi Twoją lokalizację i automatycznie rejestruje godziny, gdy jesteś w zarejestrowanej lokalizacji projektu. Takie aplikacje jak Baxilancer definiują lokalizacje projektów współrzędnymi GPS. Gdy przyjeżdżasz, rejestrowanie się zaczyna. Gdy wyjeżdżasz, się kończy.</p>
+  </div>
+  <div class="key-takeaway"><p><strong>Kluczowy wniosek:</strong> Aplikacje do rejestrowania czasu ewoluowały od ręcznych stoperów do systemów GPS. Właściwy wybór zależy od tego, gdzie pracujesz: pracownicy biurkowi potrzebują integracji, pracownicy terenowi potrzebują rozpoznawania lokalizacji.</p></div>
+
+  <h2 id="najlepsze-oprogramowanie">Jakie jest najlepsze oprogramowanie do rejestrowania czasu pracy?</h2>
+  <p><strong>Najlepsze oprogramowanie zależy od rodzaju Twojej pracy.</strong> Dla profesjonalistów biurkowych idealne są aplikacje z timerem i integracjami. Dla freelancerów, wykonawców i pracowników fizycznych odwiedzających budowy, automatyczne oprogramowanie GPS daje najdokładniejsze wyniki przy najmniejszym wysiłku.</p>
+  <h3>Jeśli pracujesz przy biurku</h3>
+  <p>Potrzebujesz timera z tagowaniem projektów, raportami i integracjami. Toggl Track, Clockify i Harvest to sprawdzone opcje.</p>
+  <h3>Jeśli zarządzasz zespołem</h3>
+  <p>Potrzebujesz zatwierdzania kart czasu pracy, paneli zespołowych i integracji z wynagrodzeniami. Hubstaff, Time Doctor i QuickBooks Time są do tego stworzone.</p>
+  <h3>Jeśli jesteś freelancerem lub wykonawcą odwiedzającym budowy</h3>
+  <p>Potrzebujesz czegoś, co rejestruje czas bez konieczności interakcji z telefonem podczas pracy. Mobilny system z automatyzacją GPS, śledzeniem finansów per projekt i opcjami eksportu. To jest przestrzeń, na której skupiają się aplikacje takie jak Baxilancer.</p>
+  <div class="card">
+    <ul class="feature-list">
+      <li><strong>Niskie tarcie:</strong> Im mniej wysiłku wymaga, tym konsekwentniej będziesz to używać. Automatyzacja wygrywa z przypomnieniami.</li>
+      <li><strong>Organizacja per projekt:</strong> Musisz widzieć godziny i koszty na projekt, nie tylko sumę tygodniową.</li>
+      <li><strong>Eksport raportów:</strong> PDF, CSV lub Excel do fakturowania, księgowości i podatków.</li>
+      <li><strong>Widoczność finansowa:</strong> Najlepsze narzędzia obliczają nie tylko godziny, ale też zysk brutto, netto i marże per projekt.</li>
+      <li><strong>Projekt mobile-first:</strong> Jeśli pracujesz w terenie, aplikacja musi bezproblemowo działać na telefonie.</li>
+    </ul>
+  </div>
+  <div class="key-takeaway"><p><strong>Kluczowy wniosek:</strong> „Najlepsze" zależy od kontekstu. Pracownicy biurkowi potrzebują integracji. Menedżerowie potrzebują nadzoru. Pracownicy terenowi potrzebują automatyzacji GPS i mobilnego śledzenia finansów.</p></div>
+
+  <h2 id="rejestrowanie-gps">Jak działa rejestrowanie czasu pracy przez GPS?</h2>
+  <p><strong>Rejestrowanie czasu przez GPS używa usług lokalizacyjnych telefonu do wykrywania, kiedy przyjeżdżasz i wyjeżdżasz z zarejestrowanej budowy, i automatycznie rejestruje godziny pracy na podstawie danych lokalizacyjnych.</strong> Nie jest potrzebne żadne ręczne wprowadzanie danych.</p>
+
+  <div class="card step-flow">
+    <div class="step">
+      <h3 style="margin-top: 0;">Skonfiguruj projekt z adresem GPS</h3>
+      <p>Tworząc nowy projekt, wprowadzasz nazwę klienta, nazwę projektu i adres GPS budowy.</p>
+      <img src="/on1.png" alt="Ekran tworzenia projektu 1" style="max-width:100%; height:auto; border-radius:12px; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); margin: 2rem auto; display:block;" />
+<img src="/on2.png" alt="Ekran tworzenia projektu 2" style="max-width:100%; height:auto; border-radius:12px; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); margin: 2rem auto; display:block;" />
+<img src="/on3.png" alt="Ekran tworzenia projektu 3" style="max-width:100%; height:auto; border-radius:12px; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); margin: 2rem auto; display:block;" />
+      <p>Ekran tworzenia projektu pozwala wprowadzić nazwę, klienta, adres GPS, datę rozpoczęcia i opcjonalnie datę zakończenia, wartość projektu, stawkę i opis. Tylko projekty ze statusem „Aktywny" są rejestrowane.</p>
+    </div>
+    <div class="step">
+      <h3 style="margin-top: 0;">Naciśnij „Zacznij pracować"</h3>
+      <p>Gdy jesteś gotowy do rozpoczęcia dnia, naciskasz jeden przycisk. To aktywuje monitorowanie GPS dla wszystkich aktywnych projektów.</p>
+      <img src="/on4.png" alt="Przycisk Zacznij pracować" style="max-width:100%; height:auto; border-radius:12px; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); margin: 2rem auto; display:block;" />
+      <p>Przycisk startu mówi aplikacji, że jesteś dostępny. Od tego momentu aplikacja monitoruje Twoją lokalizację w odniesieniu do wszystkich aktywnych budów.</p>
+    </div>
+    <div class="step">
+      <h3 style="margin-top: 0;">GPS wykrywa Twoją lokalizację</h3>
+      <p>Aplikacja sprawdza Twoje aktualne współrzędne GPS w porównaniu z zapisanymi adresami aktywnych projektów.</p>
+    </div>
+    <div class="step">
+      <h3 style="margin-top: 0;">10-minutowe odliczanie bezpieczeństwa</h3>
+      <p>Aby uniknąć fałszywych rejestracji (np. gdy tylko przejeżdżasz obok budowy), aplikacja rozpoczyna 10-minutowe odliczanie.</p>
+
+<p>Ekran odliczania pokazuje, że aplikacja wykryła Twoją lokalizację i czeka na potwierdzenie, że zostajesz na miejscu.</p>
+    </div>
+    <div class="step">
+      <h3 style="margin-top: 0;">Automatyczne rejestrowanie czasu się rozpoczyna</h3>
+      <p>Po odliczaniu rejestrowanie się zaczyna. Twoje godziny są przypisywane do właściwego projektu. Nie musisz dotykać telefonu.</p>
+      <img src="/on5.png" alt="Aktywne rejestrowanie czasu" style="max-width:100%; height:auto; border-radius:12px; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); margin: 2rem auto; display:block;" />
+      <p>Gdy rejestrowanie jest aktywne, aplikacja pokazuje działający timer z nazwą bieżącego projektu.</p>
+    </div>
+    <div class="step">
+      <h3 style="margin-top: 0;">Rejestrowanie zatrzymuje się przy wyjeździe</h3>
+      <p>Gdy odjeżdżasz z budowy, aplikacja wykryje, że opuściłeś zasięg GPS i automatycznie zatrzyma timer.</p>
+    </div>
+    <div class="step">
+      <h3 style="margin-top: 0;">Dane zapisują się w kalendarzu</h3>
+      <p>Każda zarejestrowana sesja pojawia się w Twoim kalendarzu miesięcznym jako przejrzysty wpis z nazwą projektu, godziną rozpoczęcia, godziną zakończenia i łącznymi godzinami.</p>
+    </div>
+  </div>
+  <div class="key-takeaway"><p><strong>Kluczowy wniosek:</strong> Rejestrowanie GPS działa poprzez porównanie Twojej fizycznej lokalizacji z zapisanymi adresami projektów. Odliczanie bezpieczeństwa zapobiega fałszywym rejestracjom. Po potwierdzeniu godziny są rejestrowane automatycznie do momentu wyjazdu.</p></div>
+
+  <h2 id="rejestrowanie-mobilne">Jak rejestrować godziny pracy na urządzeniach mobilnych?</h2>
+  <p><strong>Aby rejestrować godziny na urządzeniu mobilnym, instalujesz aplikację na smartfonie wykorzystującą GPS, timery lub ręczne wpisy.</strong> Najlepsze mobilne aplikacje są zaprojektowane do obsługi jedną ręką, z telefonem w kieszeni.</p>
+  <div class="card">
+    <ul class="feature-list">
+      <li><strong>Minimum dotknięć:</strong> Im mniej przycisków musisz nacisnąć, tym lepiej. Idealnie jedno dotknięcie na rozpoczęcie dnia i zero w jego trakcie.</li>
+      <li><strong>Praca w tle:</strong> Aplikacja rejestruje w tle. Nie powinieneś musieć trzymać ekranu włączonego.</li>
+      <li><strong>Obsługa offline:</strong> Budowy często mają słaby zasięg. Aplikacja musi działać bez internetu i synchronizować się później.</li>
+      <li><strong>Szybki dostęp do danych:</strong> Na koniec dnia powinieneś móc zobaczyć zarejestrowane godziny w mniej niż 5 sekund.</li>
+      <li><strong>Niskie zużycie baterii:</strong> Geofencing GPS zużywa znacznie mniej baterii niż stała nawigacja.</li>
+    </ul>
+  </div>
+  <h3>Mobilny przepływ pracy</h3>
+  <p><strong>7:00:</strong> Naciśnij „Zacznij pracować" w aplikacji. Telefon do kieszeni. Jedź na pierwszą budowę.</p>
+  <p><strong>7:25:</strong> Przyjazd na Budowę A. Aplikacja wykrywa lokalizację, zaczyna odliczanie, rozpoczyna rejestrowanie po 10 minutach.</p>
+  <p><strong>11:30:</strong> Wyjazd z Budowy A. Rejestrowanie zatrzymuje się automatycznie. Jazda na Budowę B.</p>
+  <p><strong>12:00:</strong> Przyjazd na Budowę B. Aplikacja wykrywa nową lokalizację, rozpoczyna rejestrowanie dla innego projektu.</p>
+  <p><strong>15:00:</strong> Wyjazd z Budowy B, jazda na Budowę C.</p>
+  <p><strong>15:30:</strong> Przyjazd na Budowę C. Rejestrowanie rozpoczyna się dla trzeciego projektu dnia.</p>
+  <p><strong>17:15:</strong> Wyjazd z Budowy C. Koniec dnia pracy.</p>
+  <p>W żadnym momencie tego dnia wykonawca nie musiał otwierać aplikacji, naciskać przycisków ani myśleć o rejestrowaniu czasu. Trzy oddzielne projekty zostały zarejestrowane z dokładnymi czasami rozpoczęcia i zakończenia, wszystko w tle.</p>
+  <div class="key-takeaway"><p><strong>Kluczowy wniosek:</strong> Mobilne rejestrowanie czasu powinno być niewidoczne. Najlepsze aplikacje działają w tle na GPS, wymagają minimalnej interakcji i produkują czyste dane do przeglądu w kilka sekund.</p></div>
+
+  <h2 id="reczne-vs-automatyczne">Rejestrowanie ręczne vs. automatyczne: pełne porównanie</h2>
+  <p><strong>Rejestrowanie ręczne wymaga, abyś pamiętał, uruchamiał, zatrzymywał i zapisywał każdą sesję pracy. Automatyczne wykorzystuje technologię — zwykle GPS — aby obsługiwać to bez Twojej interwencji.</strong> Dla pracowników terenowych różnica w precyzji to typowo 10 do 20 procent godzin do zafakturowania.</p>
+
+  <table class="comparison-table">
+    <thead>
+      <tr><th>Czynnik</th><th>Rejestrowanie ręczne</th><th>Automatyczne (GPS)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Wysiłek konfiguracji</td><td>Niski</td><td>Średni — zarejestruj lokalizacje</td></tr>
+      <tr><td>Dzienny wysiłek</td><td>Wysoki — pamiętaj o start/stop</td><td>Minimalny — jedno dotknięcie na start</td></tr>
+      <tr><td>Dokładność</td><td>Niska do średniej</td><td>Wysoka — weryfikacja GPS co do minuty</td></tr>
+      <tr><td>Obsługa wielu budów</td><td>Słaba</td><td>Doskonała — automatyczne wykrywanie</td></tr>
+      <tr><td>Dowód lokalizacji</td><td>Brak</td><td>Przyjazd/wyjazd weryfikowany GPS</td></tr>
+      <tr><td>Czas admina tygodniowo</td><td>1–3 godziny</td><td>5–10 minut</td></tr>
+      <tr><td>Jakość raportów</td><td>Zależy od konsekwencji</td><td>Spójna, eksportowalna (PDF, CSV, Excel)</td></tr>
+      <tr><td>Koszt błędów</td><td>Wysoki — utracone przychody</td><td>Niski — rzadkie, łatwe do naprawy</td></tr>
+      <tr><td>Najlepsze dla</td><td>Pracowników biurkowych</td><td>Pracowników terenowych, wykonawców</td></tr>
+    </tbody>
+  </table>
+
+  <blockquote><p>„Kiedyś spędzałem 45 minut w każdy piątek na poprawianiu karty czasu pracy. Teraz spędzam pięć minut na przeglądaniu tego, co aplikacja już zarejestrowała. Godziny są dokładniejsze niż cokolwiek, co mógłbym zapisać." — Niezależny technik HVAC, Wiedeń</p></blockquote>
+  <div class="key-takeaway"><p><strong>Kluczowy wniosek:</strong> Rejestrowanie ręczne działa dla pracowników biurkowych. Automatyczne rejestrowanie GPS działa dla wszystkich innych — i odzyskuje 10 do 20 procent więcej godzin do zafakturowania średnio.</p></div>
+
+  <h2 id="prawdziwy-przeplyw">Prawdziwy przepływ pracy: dzień z automatycznym rejestrowaniem czasu</h2>
+  <p>Aby zrozumieć, jak automatyczne rejestrowanie GPS działa w praktyce, śledźmy Anię przez typowy dzień pracy. Ania jest niezależną <a href="/pl/guides/time-tracking-for-electricians/" class="text-link">elektrykiem</a> w Krakowie obsługującą trzy do czterech zleceń dziennie w całym mieście.</p>
+  <div class="card">
+    <h3 style="margin-top: 0;">6:45 — Poranna rutyna</h3>
+    <p>Ania otwiera Baxilancer na swoim telefonie. Ma cztery aktywne projekty w tym tygodniu, każdy z już skonfigurowanym adresem GPS. Naciska „Zacznij pracować" i chowa telefon do kurtki.</p>
+    <h3>7:20 — Pierwsza budowa</h3>
+    <p>Ania przyjeżdża na remont kuchni na Kazimierzu. Aplikacja wykrywa, że jest w zasięgu GPS projektu „Kowalski Instalacja Elektryczna Kuchnia." Rozpoczyna się 10-minutowe odliczanie. Po 10 minutach rejestrowanie zaczyna się automatycznie. Ania już ciągnie przewody i nawet tego nie zauważa.</p>
+    <h3>10:15 — Wyjazd z pierwszej budowy</h3>
+    <p>Ania pakuje narzędzia i jedzie na następne zlecenie. Aplikacja wykrywa, że opuściła zasięg projektu Kowalski i zatrzymuje rejestrowanie. Zarejestrowany czas: 2 godziny 45 minut.</p>
+    <h3>10:40 — Przystanek w hurtowni</h3>
+    <p>Ania zatrzymuje się w hurtowni, by kupić puszkę połączeniową. Fotografuje paragon skanerem aplikacji. AI OCR wyodrębnia kwotę (14,50 EUR) i przypisuje ją do następnego projektu.</p>
+    <h3>11:05 — Druga budowa</h3>
+    <p>Przyjeżdża na nowy apartament na Podgórzu. Aplikacja wykrywa lokalizację projektu „Nowak Nowa Budowa — Elektryka." Dziesięciominutowe odliczanie, potem rejestrowanie.</p>
+    <h3>14:00 — Przerwa obiadowa</h3>
+    <p>Ania opuszcza budowę na obiad. Rejestrowanie zatrzymuje się automatycznie. Robi 45-minutową przerwę. Gdy wraca, aplikacja ponownie wykrywa jej lokalizację i wznawia rejestrowanie po odliczaniu. Przerwa nie jest wliczana do godzin pracy — automatycznie.</p>
+    <h3>16:30 — Koniec dnia</h3>
+    <p>Ania kończy na budowie Nowaka, jedzie na szybką inspekcję w trzeciej lokalizacji (15 minut) i wraca do domu. W domu otwiera aplikację i przegląda swój dzień:</p>
+    <ul class="feature-list">
+      <li>Kowalski Instalacja Kuchni: 2h 45min</li>
+      <li>Nowak Nowa Budowa: 4h 10min (w tym powrót po obiedzie)</li>
+      <li>Wiśniewski Inspekcja: 15min</li>
+      <li><strong>Razem: 7h 10min</strong></li>
+    </ul>
+    <p>Wszystkie wpisy są w jej kalendarzu miesięcznym. Robi drobną korektę i jej dzień jest zakończony. Łączny czas administracji: mniej niż dwie minuty.</p>
+  </div>
+  <img src="/monthly_calendar.png" alt="Widok kalendarza miesięcznego" style="max-width:100%; height:auto; border-radius:12px; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); margin: 2rem auto; display:block;" />
+  <p>Widok kalendarza miesięcznego pokazuje wszystkie zarejestrowane sesje jako kolorowe wpisy. Każdy wpis pokazuje nazwę projektu, czas trwania i można go dotknąć, aby zobaczyć szczegóły lub dokonać ręcznych korekt.</p>
+
+  <h2 id="problemy-tradycyjnych">Problemy z tradycyjnymi aplikacjami do rejestrowania czasu</h2>
+  <p><strong>Tradycyjne aplikacje zostały zaprojektowane dla pracowników biurowych, nie dla wykonawców i pracowników fizycznych.</strong> Ich podstawowe założenie — że będziesz regularnie interagować ze swoim urządzeniem w ciągu dnia — nie odpowiada rzeczywistości pracy fizycznej.</p>
+  <h3>Problem 1: Wymagają stałego ręcznego wprowadzania</h3>
+  <p>Każda tradycyjna aplikacja z timerem zakłada, że pamiętasz ją uruchomić. Dla pracownika biurowego przełączającego się między Slackiem a Figmą jest to rozsądne. Dla dekarza na 6 metrach na drabinie jest to absurdalne.</p>
+  <h3>Problem 2: Nie rozumieją lokalizacji</h3>
+  <p>Tradycyjne aplikacje nie mają pojęcia „gdzie" pracujesz. Rejestrują czas, ale nie miejsce. Dla wykonawcy z pięcioma aktywnymi budowami oznacza to ręczne tagowanie każdej sesji do właściwego projektu.</p>
+  <h3>Problem 3: Są desktop-first</h3>
+  <p>Większość popularnych narzędzi została stworzona jako aplikacje webowe lub desktopowe. Ich wersje mobilne są dodatkiem — niezdarne interfejsy, wolne ładowanie.</p>
+  <h3>Problem 4: Nie obsługują przerw automatycznie</h3>
+  <p>Jeśli opuścisz budowę na obiad, tradycyjny timer będzie nadal działał, chyba że go zatrzymasz. Zapomniałeś pauzować? Właśnie zarejestrowałeś 45-minutowy obiad jako pracę do zafakturowania.</p>
+  <h3>Problem 5: Brak kontekstu finansowego</h3>
+  <p>Wiedzieć, że przepracowałeś 37 godzin w tym tygodniu, jest przydatne. Wiedzieć, że przepracowałeś 37 godzin na czterech projektach, wydałeś 312 euro na materiały i osiągnąłeś marżę netto 43 procent — to jest potęga. Większość tradycyjnych aplikacji kończy na godzinach.</p>
+  <div class="key-takeaway"><p><strong>Kluczowy wniosek:</strong> Tradycyjne aplikacje nie zostały zaprojektowane dla Twojego przepływu pracy. Jeśli jesteś wykonawcą lub pracownikiem fizycznym, korzystanie z desktopowej aplikacji z timerem jest jak używanie arkusza kalkulacyjnego do nawigacji w ruchu drogowym.</p></div>
+
+  <h2 id="przyszlosc-gps">Dlaczego rejestrowanie GPS jest przyszłością</h2>
+  <p><strong>Rejestrowanie GPS jest przyszłością, ponieważ rozwiązuje centralny problem kontroli czasu dla pracowników terenowych: eliminuje czynnik ludzki z procesu.</strong> Zamiast polegać na pamięci i dyscyplinie, polega na fizyce — Twoja fizyczna lokalizacja determinuje, co jest rejestrowane.</p>
+  <div class="card">
+    <ul class="feature-list">
+      <li><strong>Lata 90.:</strong> Papierowe karty czasu i zegary do odbijania</li>
+      <li><strong>Lata 2000.:</strong> Cyfrowe arkusze kalkulacyjne i podstawowe oprogramowanie</li>
+      <li><strong>Lata 2010.:</strong> Chmurowe aplikacje z timerem i panele zespołowe</li>
+      <li><strong>Lata 2020.:</strong> Automatyzacja GPS, skanowanie paragonów AI i rejestrowanie mobile-first</li>
+    </ul>
+  </div>
+  <h3>Dlaczego GPS najlepiej działa dla pracowników terenowych</h3>
+  <div class="card">
+    <ul class="feature-list">
+      <li><strong>Bez zmiany nawyków:</strong> Nie musisz tworzyć nowego nawyku. Po prostu jedziesz do pracy. Aplikacja zajmuje się resztą.</li>
+      <li><strong>Automatyczne przełączanie między budowami:</strong> Trzy budowy dziennie? Każda jest rejestrowana do właściwego projektu bez Twojej interwencji.</li>
+      <li><strong>Wykrywanie przerw:</strong> Opuszczasz budowę na obiad? Rejestrowanie pauzuje. Wracasz? Wznawia się. Bez przycisków.</li>
+      <li><strong>Rejestry odporne na spory:</strong> Rejestry GPS zawierają dane lokalizacyjne weryfikujące, że byłeś na budowie. Znacznie bardziej wiarygodne niż samodzielnie wypełniana karta.</li>
+      <li><strong>Operacja pasywna:</strong> Po początkowym dotknięciu aplikacja działa cicho w tle.</li>
+    </ul>
+  </div>
+  <h3>Kwestia prywatności</h3>
+  <p>Niektórzy pracownicy martwią się o GPS i prywatność. To uzasadnione obawy przy śledzeniu narzucanym przez pracodawcę. Ale samodzielne rejestrowanie czasu jest fundamentalnie inne — Ty kontrolujesz system, wybierasz, które lokalizacje są monitorowane, a aplikacja rejestruje tylko wtedy, gdy jesteś na budowie, którą sam zdefiniowałeś. Baxilancer aktywuje monitorowanie GPS tylko gdy użytkownik jawnie naciśnie „Zacznij pracować" i tylko w lokalizacjach projektów zarejestrowanych przez użytkownika.</p>
+  <div class="key-takeaway"><p><strong>Kluczowy wniosek:</strong> Rejestrowanie GPS eliminuje największy punkt awarii w kontroli czasu: człowieka. Dla pracowników terenowych jest dokładniejsze, wymaga mniej wysiłku i produkuje lepsze dane niż jakakolwiek metoda ręczna.</p></div>
+
+  <h2 id="jak-bax-rozwiazuje">Szczegółowa analiza: jak Baxilancer rozwiązuje problem rejestrowania czasu</h2>
+  <p><strong>Baxilancer to aplikacja do automatycznego rejestrowania czasu oparta na GPS, stworzona specjalnie dla freelancerów, wykonawców i pracowników fizycznych, którzy potrzebują dokładnych rejestrów godzin bez obciążenia administracyjnego tradycyjnych narzędzi.</strong></p>
+  <p>Zamiast dostosowywać desktopowy timer do użytku mobilnego, Baxilancer został zaprojektowany od zera wokół jednej zasady: jeśli jesteś na budowie, pracujesz.</p>
+  <h3>Jak działa system projektów</h3>
+  <div class="card">
+    <ul class="feature-list">
+      <li><strong>Nazwa projektu</strong> (wymagana) — jak nazywasz zlecenie</li>
+      <li><strong>Nazwa klienta</strong> (wymagana) — dla kogo pracujesz</li>
+      <li><strong>Adres GPS</strong> (wymagany) — fizyczna lokalizacja budowy</li>
+      <li><strong>Data rozpoczęcia</strong> (wymagana) — kiedy projekt się zaczyna</li>
+      <li><strong>Data zakończenia</strong> (opcjonalna) — szacowane zakończenie</li>
+      <li><strong>Wartość projektu</strong> (opcjonalna) — budżetowana cena</li>
+      <li><strong>Stawka robocizny</strong> (opcjonalna) — Twoja stawka godzinowa lub dzienna</li>
+      <li><strong>Opis</strong> (opcjonalny) — notatki o zakresie pracy</li>
+      <li><strong>Status</strong> — planowanie, aktywny, wstrzymany lub zakończony</li>
+    </ul>
+  </div>
+  <p>Tylko projekty ze statusem „Aktywny" są rejestrowane przez GPS. Możesz mieć 20 projektów w systemie, ale jeśli tylko 3 są aktywne, aplikacja monitoruje tylko te 3 lokalizacje.</p>
+
+  <h2 id="przeglad-funkcji">Przegląd funkcji</h2>
+  <p>Poza automatycznym rejestrowaniem GPS, Baxilancer zawiera funkcje zaprojektowane dla specyficznych potrzeb finansowych i administracyjnych niezależnych pracowników.</p>
+  <h3>Rejestrowanie w kalendarzu miesięcznym</h3>
+  <img src="/monthly_calendar.png" alt="Widok kalendarza miesięcznego" style="max-width:100%; height:auto; border-radius:12px; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); margin: 2rem auto; display:block;" />
+  <p>Każda zarejestrowana sesja pojawia się w kalendarzu miesięcznym. Na pierwszy rzut oka widzisz, w które dni pracowałeś, jak długo trwała każda sesja i które projekty zajmowały Twój czas.</p>
+  <h3>Podsumowanie finansowe per projekt</h3>
+  <img src="/export_reports.png" alt="Podsumowanie finansowe projektu" style="max-width:100%; height:auto; border-radius:12px; box-shadow:0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); margin: 2rem auto; display:block;" />
+  <p>Każdy projekt ma panel finansowy pokazujący łączne przepracowane godziny, przychody z pracy, koszty materiałów i obliczenia zysku:</p>
+  <div class="card">
+    <ul class="feature-list">
+      <li><strong>Zysk brutto:</strong> Łączne przychody z projektu minus koszty materiałów</li>
+      <li><strong>Zysk netto:</strong> Zysk brutto minus Twój koszt czasu (na podstawie stawki)</li>
+      <li><strong>Marże zysku:</strong> Procentowy widok rentowności każdego zlecenia</li>
+      <li><strong>Rozbicie godzin:</strong> Łączne godziny z podsumowaniami dziennymi i tygodniowymi</li>
+    </ul>
+  </div>
+  <h3>Skanowanie paragonów z AI OCR</h3>
+  <p>Gdy kupujesz materiały na projekt, możesz zeskanować paragon bezpośrednio w aplikacji. <a href="/pl/receipt-scanner/" class="text-link">Skaner paragonów</a> AI wykorzystuje OCR do wyodrębniania łącznej kwoty i nazwy dostawcy. Przypisujesz go do projektu i automatycznie jest uwzględniany w podsumowaniu finansowym.</p>
+  <h3>Śledzenie materiałów</h3>
+  <p>Poza paragonami możesz śledzić materiały per projekt. To daje jasny obraz kosztów materiałów vs. kosztów robocizny.</p>
+  <h3>Eksport raportów</h3>
+  <div class="card">
+    <ul class="feature-list">
+      <li><strong>Raporty PDF</strong> — profesjonalne, gotowe do załączenia do faktur</li>
+      <li><strong>Pliki CSV</strong> — do importu w oprogramowaniu księgowym</li>
+      <li><strong>Pliki Excel</strong> — do niestandardowych analiz</li>
+    </ul>
+  </div>
+  <p>Każdy <a href="/pl/reports/" class="text-link">raport</a> zawiera szczegóły projektu, zakresy dat, godziny per sesję i podsumowania finansowe.</p>
+  <h3>Ręczna korekta czasu</h3>
+  <p>GPS nie jest doskonały. Aplikacja zawiera opcję ręcznej korekty, pozwalającą dostosować każdą zarejestrowaną sesję. Automatycznie najpierw, ręczna podpora.</p>
+
+  <h2 id="tabela-porownawcza">Tabela porównawcza: Ręczne vs. GPS vs. Hybrydowe rejestrowanie</h2>
+  <div class="card" style="overflow-x: auto;">
+    <table class="comparison-table">
+      <thead>
+        <tr><th>Funkcja</th><th>Ręczne (Papier / Arkusz)</th><th>Automatyczne GPS (np. Baxilancer)</th><th>Hybrydowe (Timer + Ręczne)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Łatwość konfiguracji</td><td>Bardzo łatwa</td><td>Łatwa (dodaj projekty raz)</td><td>Łatwa</td></tr>
+        <tr><td>Dzienny wysiłek</td><td>Wysoki</td><td>Minimalny (jedno dotknięcie)</td><td>Średni</td></tr>
+        <tr><td>Dokładność</td><td>Niska (oparta na pamięci)</td><td>Wysoka (zweryfikowana GPS)</td><td>Średnia (zależy od użytkownika)</td></tr>
+        <tr><td>Obsługa wielu budów</td><td>Bardzo trudna</td><td>Automatyczna</td><td>Ręczne przełączanie</td></tr>
+        <tr><td>Obsługa przerw</td><td>Szacowana</td><td>Automatyczna (wyjazd = pauza)</td><td>Ręczna pauza/wznowienie</td></tr>
+        <tr><td>Dowód lokalizacji</td><td>Brak</td><td>Tak (dane GPS)</td><td>Brak</td></tr>
+        <tr><td>Śledzenie finansów</td><td>Oddzielny arkusz</td><td>Zintegrowane per projekt</td><td>Zależy od aplikacji</td></tr>
+        <tr><td>Rejestrowanie paragonów</td><td>Papier / pudełko na buty</td><td>Skanowanie AI OCR</td><td>Zazwyczaj brak</td></tr>
+        <tr><td>Eksport raportów</td><td>Ręczne tworzenie</td><td>PDF, CSV, Excel</td><td>Zależy od aplikacji</td></tr>
+        <tr><td>Tygodniowy czas admina</td><td>1–3 godziny</td><td>5–10 minut</td><td>30–60 minut</td></tr>
+        <tr><td>Najlepsze dla</td><td>Jedna lokalizacja, proste zlecenia</td><td>Pracownicy terenowi, wiele budów</td><td>Biurko z odrobiną podróży</td></tr>
+        <tr><td>Odzyskiwanie przychodów</td><td>Linia bazowa</td><td>+10–20% więcej godzin do fakturowania</td><td>+5–10% poprawa</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="key-takeaway"><p><strong>Kluczowy wniosek:</strong> Automatyczne rejestrowanie GPS wygrywa w każdej metryce, która ma znaczenie dla pracowników terenowych: dokładność, wysiłek, obsługa wielu budów i odzyskiwanie przychodów.</p></div>
+
+  <h2 id="faq">Najczęściej zadawane pytania</h2>
+  <div class="card">
+    <h3 style="margin-top: 0;">Jaka jest najlepsza darmowa aplikacja do rejestrowania czasu dla freelancerów?</h3>
+    <p>Najlepsze darmowe aplikacje oferują automatyczne rejestrowanie, ewidencję projektową i eksport raportów. Aplikacje GPS jak Baxilancer oferują bezpłatny okres próbny z rejestrowaniem po lokalizacji, skanowaniem paragonów i podsumowaniami finansowymi. Dla podstawowych potrzeb Toggl i Clockify oferują darmowe plany z ręcznymi timerami.</p>
+    <h3>Jak działa rejestrowanie czasu przez GPS?</h3>
+    <p>Wykorzystuje usługi lokalizacyjne telefonu do wykrywania, kiedy przyjeżdżasz i wyjeżdżasz z budowy. Gdy wejdziesz w zarejestrowaną lokalizację, aplikacja rozpoczyna 10-minutowe odliczanie bezpieczeństwa. Po potwierdzeniu rejestrowanie rozpoczyna się automatycznie i zapisuje do kalendarza per projekt.</p>
+    <h3>Czy automatyczne rejestrowanie czasu jest dokładne?</h3>
+    <p>Tak. Jest dokładne do kilku metrów od lokalizacji. Eliminuje błędy ludzkie jak zapominanie o uruchomieniu timera czy zaokrąglanie godzin. Większość systemów zawiera ręczną korektę na wypadki wyjątkowe.</p>
+    <h3>Czy mogę rejestrować czas dla wielu projektów w ciągu dnia?</h3>
+    <p>Tak. Aplikacje GPS wykrywają, na której budowie się znajdujesz i automatycznie przypisują godziny do właściwego projektu. Trzy budowy w ciągu dnia? Każda wizyta jest rejestrowana i przypisana bez ręcznego wprowadzania.</p>
+    <h3>Czy rejestrowanie GPS wyczerpuje baterię telefonu?</h3>
+    <p>Nowoczesny geofencing GPS jest energooszczędny i zużywa znacznie mniej baterii niż aplikacje nawigacyjne jak Google Maps. Większość użytkowników zgłasza znikomy wpływ.</p>
+    <h3>Jak wykonawcy udowadniają klientom godziny pracy?</h3>
+    <p>Mogą eksportować szczegółowe <a href="/pl/reports/" class="text-link">raporty</a> pokazujące dokładne czasy przyjazdu i wyjazdu, dane lokalizacyjne i łączne godziny per projekt jako PDF, CSV lub Excel.</p>
+    <h3>Jaka jest różnica między ręcznym a automatycznym rejestrowaniem?</h3>
+    <p>Ręczne wymaga pamiętania o uruchomieniu i zatrzymaniu timera. Automatyczne używa GPS do obsługi tego bez Twojej interwencji. Dla pracowników terenowych automatyczne jest dokładniejsze o 10 do 20 procent.</p>
+    <h3>Czy mogę rejestrować paragony i wydatki razem z godzinami?</h3>
+    <p>Tak. Aplikacje takie jak Baxilancer zawierają <a href="/pl/receipt-scanner/" class="text-link">skaner paragonów</a> z AI OCR. Przypisujesz każdy paragon do projektu dla czystych raportów wydatków i dokładnych obliczeń zysku.</p>
+    <h3>Czy moje dane lokalizacyjne są prywatne i bezpieczne?</h3>
+    <p>Przy aplikacjach samozarządzanych to Ty kontrolujesz wszystko. Lokalizacja jest rejestrowana tylko na budowach, które zarejestrowałeś. Dane są szyfrowane i nigdy nie są udostępniane osobom trzecim. Przeczytaj <a href="/pl/privacy/" class="text-link">politykę prywatności</a> każdej aplikacji przed użyciem.</p>
+    <h3>Jak przejść z papierowych kart na aplikację?</h3>
+    <p>Skonfiguruj stałe budowy w aplikacji. Używaj obu systemów równolegle przez tydzień, aby porównać dokładność. W drugim tygodniu używaj aplikacji jako głównego źródła. Od trzeciego tygodnia zrezygnuj z papieru i używaj automatycznych raportów do fakturowania.</p>
+    <h3>Co się stanie, jeśli sygnał GPS jest słaby na budowie?</h3>
+    <p>Nowoczesne aplikacje działają offline i wykorzystują kombinację GPS, Wi-Fi i triangulacji komórkowej. Nawet w piwnicach czy na terenach wiejskich ze słabym zasięgiem system utrzymuje rozsądną dokładność. Zawsze możesz dokonać ręcznych korekt.</p>
+    <h3>Czy mogę użyć rejestrowania GPS do fakturowania?</h3>
+    <p>Tak. Możesz eksportować szczegółowe raporty per projekt lub per okres, zawierające godziny, daty i podsumowania finansowe — gotowe do załączenia do faktury.</p>
+  </div>
+
+  <h2 id="podsumowanie">Podsumowanie: rejestrowanie czasu powinno pracować dla Ciebie, nie odwrotnie</h2>
+  <p>Sposób, w jaki większość freelancerów, wykonawców i pracowników fizycznych rejestruje godziny pracy, nie zmienił się znacząco od dziesięcioleci. Papierowe karty, szacunki z pamięci i aplikacje z timerem wymagające stałej uwagi — te narzędzia zostały stworzone dla pracowników biurowych, nie dla ludzi spędzających dni na budowach, u klientów czy między serwisami.</p>
+  <p>Prawdziwy koszt złego rejestrowania czasu to nie tylko utracone godziny. To skumulowany efekt zaniżania każdego projektu, tracenia ulg podatkowych co kwartał i spędzania wieczorów i weekendów na administracji zamiast na odpoczynku.</p>
+  <p>Automatyczne rejestrowanie oparte na GPS zmienia równanie. Zamienia kontrolę czasu z czegoś, co musisz robić, w coś, co dzieje się w tle podczas Twojej właściwej pracy. Przyjeżdżasz na budowę, godziny się rejestrują. Wyjeżdżasz, zatrzymują się. Skanujesz paragon, jest przypisany do projektu. Na koniec miesiąca eksportujesz raport i wysyłasz fakturę.</p>
+  <p>Tak powinno wyglądać rejestrowanie czasu: niewidoczne, dokładne i pracujące dla Ciebie.</p>
+  <p>Jeśli Twój obecny system polega na pamięci, karteczkach samoprzylepnych lub timerze, który zapominasz nacisnąć, to może czas zbadać nowoczesne rozwiązania takie jak <a href="https://apps.apple.com/us/app/baxilancer/id6757809629" target="_blank" rel="noopener noreferrer" class="btn-primary">Wypróbuj naszą aplikację za darmo przez 7 dni</a>. Technologia jest dojrzała, aplikacje są proste, a różnica w Twoich fakturowanych godzinach będzie mówić sama za siebie.</p>
+
+  <div class="card" style="text-align: center; background: #f9fafb; border-color: var(--primary-green);">
+    <h2 style="margin-top: 0;">Zacznij rejestrować mądrzej</h2>
+    <p>Dowiedz się, jak automatyczne rejestrowanie czasu przez GPS działa dla freelancerów, wykonawców i pracowników fizycznych.</p>
+    <a href="https://apps.apple.com/us/app/baxilancer/id6757809629" target="_blank" rel="noopener noreferrer" class="btn-primary">Wypróbuj naszą aplikację za darmo przez 7 dni</a>
+    <p style="margin-top: 16px; font-size: 14px; color: var(--text-muted);">
+      Powiązane: <a href="/pl/guides/" class="text-link">Przewodniki</a> · <a href="/pl/receipt-scanner/" class="text-link">Skaner paragonów</a> · <a href="/pl/reports/" class="text-link">Raporty</a>
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 BAXILANCER • <a href="/pl/">Strona główna</a> • <a href="/pl/guides/">Przewodniki</a> • <a href="/pl/privacy/">Prywatność</a> • Kontakt: <a href="mailto:baxilancer@gmail.com">baxilancer@gmail.com</a>
+</footer>
+
+</body>
+</html>

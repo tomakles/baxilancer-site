@@ -13,6 +13,7 @@
   const labels = {
     en: {
       home: "Home",
+      blog: "Blog",
       gps: "GPS",
       receipts: "Receipts",
       reports: "Reports",
@@ -25,6 +26,7 @@
     },
     de: {
       home: "Start",
+      blog: "Blog",
       gps: "GPS",
       receipts: "Belege",
       reports: "Berichte",
@@ -37,6 +39,7 @@
     },
     es: {
       home: "Inicio",
+      blog: "Blog",
       gps: "GPS",
       receipts: "Recibos",
       reports: "Informes",
@@ -49,6 +52,7 @@
     },
     pl: {
       home: "Start",
+      blog: "Blog",
       gps: "GPS",
       receipts: "Paragony",
       reports: "Raporty",
@@ -61,6 +65,7 @@
     },
     sk: {
       home: "Domov",
+      blog: "Blog",
       gps: "GPS",
       receipts: "Bločky",
       reports: "Prehľady",
@@ -305,6 +310,7 @@
     { key: "receipts", href: `${homePath}receipt-scanner/` },
     { key: "reports", href: `${homePath}reports/` },
     { key: "guides", href: `${homePath}guides/` },
+    { key: "blog", href: `${homePath}blog/` },
     { key: "terms", href: `${homePath}terms/` },
     { key: "privacy", href: privacyHref },
     { key: "support", href: `${homePath}support/` },
