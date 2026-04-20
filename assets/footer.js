@@ -192,7 +192,7 @@
     }
 
     const gaSrc = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(
-      GA_MEASUREMENT_ID
+      GA_MEASUREMENT_ID,
     )}`;
     if (!document.querySelector(`script[src="${gaSrc}"]`)) {
       const script = document.createElement("script");
@@ -346,7 +346,7 @@
   const getHreflangPaths = () => {
     const paths = {};
     const links = document.querySelectorAll(
-      'link[rel="alternate"][hreflang][href]'
+      'link[rel="alternate"][hreflang][href]',
     );
     for (const link of links) {
       const raw = (link.getAttribute("hreflang") || "").toLowerCase();
@@ -404,7 +404,7 @@
         const activeClass = active ? "active" : "";
         const ariaCurrentAttr = active ? ' aria-current="page"' : "";
         return `<a href="${makeHref(
-          langKey
+          langKey,
         )}" class="lang-link ${activeClass}"${ariaCurrentAttr}>${
           labels[langKey]
         }</a>`;
@@ -459,7 +459,7 @@
     }
 
     const cookieSettingsLink = wrapper.querySelector(
-      '[data-action="cookie-settings"]'
+      '[data-action="cookie-settings"]',
     );
     cookieSettingsLink?.addEventListener("click", (e) => {
       e.preventDefault();
@@ -496,7 +496,7 @@
     <div class="footer-inner">
       <div class="footer-solutions" style="margin-bottom: 32px; text-align: center;">
         <div style="font-weight: 600; margin-bottom: 12px; color: #374151; text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em;">Solutions</div>
-        <a href="/gps-time-tracking-for-contractors/" style="display: inline-block; margin: 0 10px; color: #4B5563; text-decoration: none;">GPS Time Tracking for Contractors</a>
+        <a href="/gps-time-tracking/" style="display: inline-block; margin: 0 10px; color: #4B5563; text-decoration: none;">GPS Time Tracking for Contractors</a>
         <a href="/automatic-time-tracking-for-freelancers/" style="display: inline-block; margin: 0 10px; color: #4B5563; text-decoration: none;">Automatic Time Tracking for Freelancers</a>
       </div>
       <nav class="footer-nav" aria-label="Footer">
@@ -513,7 +513,7 @@
   `.trim();
 
   const cookieSettingsLink = footer.querySelector(
-    '[data-action="cookie-settings"]'
+    '[data-action="cookie-settings"]',
   );
   cookieSettingsLink?.addEventListener("click", (e) => {
     e.preventDefault();

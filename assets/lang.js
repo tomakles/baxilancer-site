@@ -1,13 +1,49 @@
 (() => {
-  const STORAGE_KEY = 'baxilancer_lang_preference';
-  const DISMISS_UNTIL_KEY = 'baxilancer_lang_dismiss_until';
+  /* ── Strip tracking query parameters from URL (SEO: prevent duplicate indexing) ── */
+  if (window.location.search) {
+    try {
+      const url = new URL(window.location.href);
+      const seoParams = [
+        "src",
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "ref",
+        "fbclid",
+        "gclid",
+      ];
+      let changed = false;
+      for (const p of seoParams) {
+        if (url.searchParams.has(p)) {
+          url.searchParams.delete(p);
+          changed = true;
+        }
+      }
+      if (changed) {
+        const clean =
+          url.pathname +
+          (url.searchParams.toString()
+            ? "?" + url.searchParams.toString()
+            : "") +
+          url.hash;
+        history.replaceState(null, "", clean);
+      }
+    } catch {
+      /* ignore */
+    }
+  }
+
+  const STORAGE_KEY = "baxilancer_lang_preference";
+  const DISMISS_UNTIL_KEY = "baxilancer_lang_dismiss_until";
 
   const supported = {
-    en: { path: '/', label: 'English' },
-    de: { path: '/de/', label: 'Deutsch' },
-    es: { path: '/es/', label: 'Español' },
-    pl: { path: '/pl/', label: 'Polski' },
-    sk: { path: '/sk/', label: 'Slovenčina' }
+    en: { path: "/", label: "English" },
+    de: { path: "/de/", label: "Deutsch" },
+    es: { path: "/es/", label: "Español" },
+    pl: { path: "/pl/", label: "Polski" },
+    sk: { path: "/sk/", label: "Slovenčina" },
   };
 
   const suggestedCopy = {
@@ -15,31 +51,31 @@
     de: (label) => `Wir haben ${label} erkannt. Sprache wechseln?`,
     es: (label) => `Hemos detectado ${label}. ¿Cambiar de idioma?`,
     pl: (label) => `Wykryliśmy ${label}. Przełączyć język?`,
-    sk: (label) => `Zistili sme, že preferujete ${label}. Prepnúť jazyk?`
+    sk: (label) => `Zistili sme, že preferujete ${label}. Prepnúť jazyk?`,
   };
 
   const switchLabel = {
-    en: 'Switch',
-    de: 'Wechseln',
-    es: 'Cambiar',
-    pl: 'Przełącz',
-    sk: 'Prepnúť'
+    en: "Switch",
+    de: "Wechseln",
+    es: "Cambiar",
+    pl: "Przełącz",
+    sk: "Prepnúť",
   };
 
   const stayLabel = {
-    en: 'Stay here',
-    de: 'Hier bleiben',
-    es: 'Quedarme aquí',
-    pl: 'Zostań tutaj',
-    sk: 'Zostať tu'
+    en: "Stay here",
+    de: "Hier bleiben",
+    es: "Quedarme aquí",
+    pl: "Zostań tutaj",
+    sk: "Zostať tu",
   };
 
   const closeLabel = {
-    en: 'Not now',
-    de: 'Nicht jetzt',
-    es: 'Ahora no',
-    pl: 'Nie teraz',
-    sk: 'Teraz nie'
+    en: "Not now",
+    de: "Nicht jetzt",
+    es: "Ahora no",
+    pl: "Nie teraz",
+    sk: "Teraz nie",
   };
 
   const safeGet = (key) => {
@@ -58,50 +94,53 @@
     }
   };
 
-  const baseLang = (lang) => (lang || '').toLowerCase().split('-')[0];
+  const baseLang = (lang) => (lang || "").toLowerCase().split("-")[0];
 
   const getCurrentLang = () => {
     const htmlLang = baseLang(document.documentElement.lang);
     if (supported[htmlLang]) return htmlLang;
 
     const path = window.location.pathname;
-    for (const lang of ['sk', 'de', 'es', 'pl']) {
+    for (const lang of ["sk", "de", "es", "pl"]) {
       if (path === `/${lang}/` || path.startsWith(`/${lang}/`)) return lang;
     }
-    return 'en';
+    return "en";
   };
 
   const stripLangPrefix = (path) => {
-    for (const lang of ['sk', 'de', 'es', 'pl']) {
+    for (const lang of ["sk", "de", "es", "pl"]) {
       const prefix = `/${lang}`;
-      if (path === prefix || path === `${prefix}/`) return '/';
-      if (path.startsWith(`${prefix}/`)) return path.slice(prefix.length) || '/';
+      if (path === prefix || path === `${prefix}/`) return "/";
+      if (path.startsWith(`${prefix}/`))
+        return path.slice(prefix.length) || "/";
     }
-    return path || '/';
+    return path || "/";
   };
 
   const buildPathForLang = (targetLang, basePath) => {
     if (!supported[targetLang]) return basePath;
-    if (targetLang === 'en') return basePath;
-    if (basePath === '/' || basePath === '/index.html') return supported[targetLang].path;
+    if (targetLang === "en") return basePath;
+    if (basePath === "/" || basePath === "/index.html")
+      return supported[targetLang].path;
     return `/${targetLang}${basePath}`;
   };
 
   const getBrowserLang = () => {
-    const langs = Array.isArray(navigator.languages) && navigator.languages.length
-      ? navigator.languages
-      : [navigator.language];
+    const langs =
+      Array.isArray(navigator.languages) && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language];
 
     for (const lang of langs) {
       const base = baseLang(lang);
       if (supported[base]) return base;
     }
-    return 'en';
+    return "en";
   };
 
   const isRootPath = () => {
     const path = window.location.pathname;
-    return path === '/' || path === '/index.html';
+    return path === "/" || path === "/index.html";
   };
 
   const isDismissed = () => {
@@ -126,7 +165,12 @@
   const preferred = baseLang(safeGet(STORAGE_KEY));
   const current = getCurrentLang();
 
-  if (preferred && supported[preferred] && isRootPath() && preferred !== current) {
+  if (
+    preferred &&
+    supported[preferred] &&
+    isRootPath() &&
+    preferred !== current
+  ) {
     redirectTo(preferred);
     return;
   }
@@ -136,13 +180,15 @@
   const browser = getBrowserLang();
   if (!supported[browser] || browser === current) return;
 
-  const messageLang = supported[browser] ? browser : 'en';
-  const message = (suggestedCopy[messageLang] || suggestedCopy.en)(supported[browser].label);
+  const messageLang = supported[browser] ? browser : "en";
+  const message = (suggestedCopy[messageLang] || suggestedCopy.en)(
+    supported[browser].label,
+  );
 
   const basePath = stripLangPrefix(window.location.pathname);
-  const targetHref = `${buildPathForLang(browser, basePath)}${window.location.search || ''}${window.location.hash || ''}`;
+  const targetHref = `${buildPathForLang(browser, basePath)}${window.location.search || ""}${window.location.hash || ""}`;
 
-  const style = document.createElement('style');
+  const style = document.createElement("style");
   style.textContent = `
 #lang-notice{
   position:fixed;
@@ -215,40 +261,40 @@
 `;
   document.head.appendChild(style);
 
-  const notice = document.createElement('div');
-  notice.id = 'lang-notice';
-  notice.setAttribute('role', 'dialog');
-  notice.setAttribute('aria-label', 'Language suggestion');
+  const notice = document.createElement("div");
+  notice.id = "lang-notice";
+  notice.setAttribute("role", "dialog");
+  notice.setAttribute("aria-label", "Language suggestion");
 
-  const text = document.createElement('p');
+  const text = document.createElement("p");
   text.textContent = message;
 
-  const actions = document.createElement('div');
-  actions.className = 'actions';
+  const actions = document.createElement("div");
+  actions.className = "actions";
 
-  const switchBtn = document.createElement('a');
-  switchBtn.className = 'btn primary';
+  const switchBtn = document.createElement("a");
+  switchBtn.className = "btn primary";
   switchBtn.href = targetHref;
   switchBtn.textContent = switchLabel[messageLang] || switchLabel.en;
-  switchBtn.addEventListener('click', () => {
+  switchBtn.addEventListener("click", () => {
     safeSet(STORAGE_KEY, browser);
   });
 
-  const stayBtn = document.createElement('button');
-  stayBtn.type = 'button';
-  stayBtn.className = 'btn';
+  const stayBtn = document.createElement("button");
+  stayBtn.type = "button";
+  stayBtn.className = "btn";
   stayBtn.textContent = stayLabel[messageLang] || stayLabel.en;
-  stayBtn.addEventListener('click', () => {
+  stayBtn.addEventListener("click", () => {
     safeSet(STORAGE_KEY, current);
     dismissForDays(180);
     notice.remove();
   });
 
-  const closeBtn = document.createElement('button');
-  closeBtn.type = 'button';
-  closeBtn.className = 'btn';
+  const closeBtn = document.createElement("button");
+  closeBtn.type = "button";
+  closeBtn.className = "btn";
   closeBtn.textContent = closeLabel[messageLang] || closeLabel.en;
-  closeBtn.addEventListener('click', () => {
+  closeBtn.addEventListener("click", () => {
     dismissForDays(14);
     notice.remove();
   });
