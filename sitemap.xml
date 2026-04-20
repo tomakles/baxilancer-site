@@ -1,140 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- === EN: Homepage + landing pages === -->
   <url>
     <loc>https://www.baxilancer.ovh/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.baxilancer.ovh/de/</loc>
-    <lastmod>2025-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.baxilancer.ovh/es/</loc>
-    <lastmod>2025-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.baxilancer.ovh/pl/</loc>
-    <lastmod>2025-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.baxilancer.ovh/sk/</loc>
-    <lastmod>2025-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://www.baxilancer.ovh/gps-time-tracking/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/automatic-time-tracking-for-freelancers/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/job-site-time-tracking-app/</loc>
-    <lastmod>2026-04-13</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.baxilancer.ovh/blog/</loc>
-    <lastmod>2026-04-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.baxilancer.ovh/blog/why-manual-time-tracking-fails-on-job-sites/</loc>
-    <lastmod>2026-04-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.baxilancer.ovh/receipt-scanner/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/reports/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- === EN: Blog === -->
+  <url>
+    <loc>https://www.baxilancer.ovh/blog/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.baxilancer.ovh/blog/how-freelancers-contractors-track-work-hours-automatically/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.baxilancer.ovh/blog/why-manual-time-tracking-fails-on-job-sites/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- === EN: Guides === -->
   <url>
     <loc>https://www.baxilancer.ovh/guides/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/guides/time-tracking-for-electricians/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/guides/time-tracking-for-plumbers/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/guides/time-tracking-for-hvac-technicians/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- === EN: Legal === -->
+  <url>
+    <loc>https://www.baxilancer.ovh/privacy/</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+  <!-- === DE === -->
+  <url>
+    <loc>https://www.baxilancer.ovh/de/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://www.baxilancer.ovh/de/gps-time-tracking/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/de/receipt-scanner/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/de/reports/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.baxilancer.ovh/de/blog/how-freelancers-contractors-track-work-hours-automatically/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.baxilancer.ovh/de/guides/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/de/guides/time-tracking-for-electricians/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/de/guides/time-tracking-for-plumbers/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/de/guides/time-tracking-for-hvac-technicians/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -144,45 +153,59 @@
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+
+  <!-- === ES === -->
+  <url>
+    <loc>https://www.baxilancer.ovh/es/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://www.baxilancer.ovh/es/gps-time-tracking/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/es/receipt-scanner/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/es/reports/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.baxilancer.ovh/es/blog/how-freelancers-contractors-track-work-hours-automatically/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.baxilancer.ovh/es/guides/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/es/guides/time-tracking-for-electricians/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/es/guides/time-tracking-for-plumbers/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/es/guides/time-tracking-for-hvac-technicians/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -192,45 +215,59 @@
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+
+  <!-- === PL === -->
+  <url>
+    <loc>https://www.baxilancer.ovh/pl/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://www.baxilancer.ovh/pl/gps-time-tracking/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/pl/receipt-scanner/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/pl/reports/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.baxilancer.ovh/pl/blog/how-freelancers-contractors-track-work-hours-automatically/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.baxilancer.ovh/pl/guides/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/pl/guides/time-tracking-for-electricians/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/pl/guides/time-tracking-for-plumbers/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/pl/guides/time-tracking-for-hvac-technicians/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -240,56 +277,64 @@
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+
+  <!-- === SK === -->
+  <url>
+    <loc>https://www.baxilancer.ovh/sk/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://www.baxilancer.ovh/sk/gps-time-tracking/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/sk/receipt-scanner/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/sk/reports/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.baxilancer.ovh/sk/blog/how-freelancers-contractors-track-work-hours-automatically/</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.baxilancer.ovh/sk/guides/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/sk/guides/time-tracking-for-electricians/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/sk/guides/time-tracking-for-plumbers/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/sk/guides/time-tracking-for-hvac-technicians/</loc>
-    <lastmod>2025-12-14</lastmod>
+    <lastmod>2026-04-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.baxilancer.ovh/sk/privacy/</loc>
-    <lastmod>2025-12-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://www.baxilancer.ovh/privacy/</loc>
     <lastmod>2025-12-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
