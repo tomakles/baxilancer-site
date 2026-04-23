@@ -496,7 +496,7 @@
     <div class="footer-inner">
       <div class="footer-solutions" style="margin-bottom: 32px; text-align: center;">
         <div style="font-weight: 600; margin-bottom: 12px; color: #374151; text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em;">Solutions</div>
-        <a href="/gps-time-tracking/" style="display: inline-block; margin: 0 10px; color: #4B5563; text-decoration: none;">GPS Time Tracking for Contractors</a>
+        <a href="/gps-time-tracking-for-contractors/" style="display: inline-block; margin: 0 10px; color: #4B5563; text-decoration: none;">GPS Time Tracking for Contractors</a>
         <a href="/automatic-time-tracking-for-freelancers/" style="display: inline-block; margin: 0 10px; color: #4B5563; text-decoration: none;">Automatic Time Tracking for Freelancers</a>
       </div>
       <nav class="footer-nav" aria-label="Footer">
